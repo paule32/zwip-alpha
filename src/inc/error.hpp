@@ -51,22 +51,156 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	template < Error EC>
+	template < int ErrorCode >
 	struct onError
 	{
 		void operator()(void) const {
-			//if (std::is_same_v<int, Type>)
-			//{
-			//	MessageBoxW(0,L"same type", L"info", MB_OK);
-			//}
 		}
-		
-		/*void call(std::wstring text, std::wstring title) {
-			if (NC != ERROR_SUCCESS) {
-				EF(text, title);
-				throw Exception(NC, text, title);
-			}
-		*/
+	};
+	template < Error ErrorCode >
+	struct onError
+	{
+		void operator()(void               ) const { }
+		void operator()(char         * text) const { }
+		void operator()(std:: string   text) const { }
+		void operator()(std::wstring   text) const { }
+		void operator()(String         text) const { }
+		//
+		void operator()(char * text, char         * title) const { }
+		void operator()(char * text, std:: string   title) const { }
+		void operator()(char * text, std::wstring * title) const { }
+		void operator()(char * text, String         title) const { }
+		//
+		void operator()(std::string text, char         * title) const { }
+		void operator()(std::string text, std:: string   title) const { }
+		void operator()(std::string text, std::wstring * title) const { }
+		void operator()(std::string text, String         title) const { }
+		//
+		void operator()(std::wstring text, char         * title) const { }
+		void operator()(std::wstring text, std:: string   title) const { }
+		void operator()(std::wstring text, std::wstring * title) const { }
+		void operator()(std::wstring text, String         title) const { }
+		//
+		void operator()(String text, char         * title) const { }
+		void operator()(String text, std:: string   title) const { }
+		void operator()(String text, std::wstring * title) const { }
+		void operator()(String text, String         title) const { }
+	};
+	template < String ErrorText >
+	struct onError
+	{
+		void operator()(void               ) const { }
+		void operator()(char         * text) const { }
+		void operator()(std:: string   text) const { }
+		void operator()(std::wstring   text) const { }
+		void operator()(String         text) const { }
+		//
+		void operator()(char * text, char         * title) const { }
+		void operator()(char * text, std:: string   title) const { }
+		void operator()(char * text, std::wstring * title) const { }
+		void operator()(char * text, String         title) const { }
+		//
+		void operator()(std::string text, char         * title) const { }
+		void operator()(std::string text, std:: string   title) const { }
+		void operator()(std::string text, std::wstring * title) const { }
+		void operator()(std::string text, String         title) const { }
+		//
+		void operator()(std::wstring text, char         * title) const { }
+		void operator()(std::wstring text, std:: string   title) const { }
+		void operator()(std::wstring text, std::wstring * title) const { }
+		void operator()(std::wstring text, String         title) const { }
+		//
+		void operator()(String text, char         * title) const { }
+		void operator()(String text, std:: string   title) const { }
+		void operator()(String text, std::wstring * title) const { }
+		void operator()(String text, String         title) const { }
+	};
+	template < std::wstring ErrorText >
+	struct onError
+	{
+		void operator()(void               ) const { }
+		void operator()(char         * text) const { }
+		void operator()(std:: string   text) const { }
+		void operator()(std::wstring   text) const { }
+		void operator()(String         text) const { }
+		//
+		void operator()(char * text, char         * title) const { }
+		void operator()(char * text, std:: string   title) const { }
+		void operator()(char * text, std::wstring * title) const { }
+		void operator()(char * text, String         title) const { }
+		//
+		void operator()(std::string text, char         * title) const { }
+		void operator()(std::string text, std:: string   title) const { }
+		void operator()(std::string text, std::wstring * title) const { }
+		void operator()(std::string text, String         title) const { }
+		//
+		void operator()(std::wstring text, char         * title) const { }
+		void operator()(std::wstring text, std:: string   title) const { }
+		void operator()(std::wstring text, std::wstring * title) const { }
+		void operator()(std::wstring text, String         title) const { }
+		//
+		void operator()(String text, char         * title) const { }
+		void operator()(String text, std:: string   title) const { }
+		void operator()(String text, std::wstring * title) const { }
+		void operator()(String text, String         title) const { }
+	};
+	template < std::string ErrorText >
+	struct onError
+	{
+		void operator()(void               ) const { }
+		void operator()(char         * text) const { }
+		void operator()(std:: string   text) const { }
+		void operator()(std::wstring   text) const { }
+		void operator()(String         text) const { }
+		//
+		void operator()(char * text, char         * title) const { }
+		void operator()(char * text, std:: string   title) const { }
+		void operator()(char * text, std::wstring * title) const { }
+		void operator()(char * text, String         title) const { }
+		//
+		void operator()(std::string text, char         * title) const { }
+		void operator()(std::string text, std:: string   title) const { }
+		void operator()(std::string text, std::wstring * title) const { }
+		void operator()(std::string text, String         title) const { }
+		//
+		void operator()(std::wstring text, char         * title) const { }
+		void operator()(std::wstring text, std:: string   title) const { }
+		void operator()(std::wstring text, std::wstring * title) const { }
+		void operator()(std::wstring text, String         title) const { }
+		//
+		void operator()(String text, char         * title) const { }
+		void operator()(String text, std:: string   title) const { }
+		void operator()(String text, std::wstring * title) const { }
+		void operator()(String text, String         title) const { }
+	};
+	template < char * ErrorText >
+	struct onError
+	{
+		void operator()(void               ) const { }
+		void operator()(char         * text) const { }
+		void operator()(std:: string   text) const { }
+		void operator()(std::wstring   text) const { }
+		void operator()(String         text) const { }
+		//
+		void operator()(char * text, char         * title) const { }
+		void operator()(char * text, std:: string   title) const { }
+		void operator()(char * text, std::wstring * title) const { }
+		void operator()(char * text, String         title) const { }
+		//
+		void operator()(std::string text, char         * title) const { }
+		void operator()(std::string text, std:: string   title) const { }
+		void operator()(std::string text, std::wstring * title) const { }
+		void operator()(std::string text, String         title) const { }
+		//
+		void operator()(std::wstring text, char         * title) const { }
+		void operator()(std::wstring text, std:: string   title) const { }
+		void operator()(std::wstring text, std::wstring * title) const { }
+		void operator()(std::wstring text, String         title) const { }
+		//
+		void operator()(String text, char         * title) const { }
+		void operator()(String text, std:: string   title) const { }
+		void operator()(String text, std::wstring * title) const { }
+		void operator()(String text, String         title) const { }
 	};
 
 	// ---------------------------------------

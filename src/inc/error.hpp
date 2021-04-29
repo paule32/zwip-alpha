@@ -84,7 +84,7 @@ namespace kallup::Exception
 	};
 	template < class String >
 	struct onError
-	{ };
+	{
 		void operator()(void               ) const { }
 		void operator()(char         * text) const { }
 		void operator()(std:: string   text) const { }

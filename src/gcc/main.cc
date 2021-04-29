@@ -10,10 +10,9 @@
 // lambda [capture locals](arguments to lambda)
 constexpr std::function<
 	void (std::wstring text,
-		  std::wstring title) >
-		  handleError = [](
+		  std::wstring title) > handleError = [](
 		  std::wstring text,
-		  std::wstring title) const
+		  std::wstring title)
 {
 //	wchar_t s1[100] = { &text.c_str() };
 //	MessageBoxW(0, s1, title.c_str(), MB_OK); 

@@ -31,11 +31,11 @@ std::function<
 		DWORD	  fdwReason,	// reason for calling function
 		LPVOID    lpReserved)
 	#else
-	int WINAPI
+	INT WINAPI
 	WinMain(
 		HINSTANCE hInstance,
 		HINSTANCE hPrevInstance,
-		PWSTR     pCmdLine,
+		PSTR      pCmdLine,
 		int       nCmdShow)
 	#endif
 #else
@@ -43,5 +43,10 @@ int main(void)
 #endif
 {	
 	onError<1>();
-    return true;
+	
+	#ifdef TARGET_DLL 
+	return true;
+	#else
+    return 0;
+	#endif
 }

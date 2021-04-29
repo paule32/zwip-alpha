@@ -60,7 +60,7 @@ namespace kallup::Exception
 		void operator()(char         * text) const { }
 		void operator()(std:: string   text) const { }
 		void operator()(std::wstring   text) const { }
-		void operator()(String         text) const { }
+		void operator()(class String         text) const { }
 		//
 		void operator()(char * text, char         * title) const { }
 		void operator()(char * text, std:: string   title) const { }

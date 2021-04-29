@@ -53,7 +53,7 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	template< error NC >
+	template< Error NC >
 	struct onError
 	{
 		/*

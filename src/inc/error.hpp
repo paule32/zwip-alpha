@@ -65,51 +65,51 @@ namespace kallup::Exception
 		void operator()(char * text, char         * title) const { }
 		void operator()(char * text, std:: string   title) const { }
 		void operator()(char * text, std::wstring * title) const { }
-		void operator()(char * text, String         title) const { }
+		void operator()(char * text, class String   title) const { }
 		//
 		void operator()(std::string text, char         * title) const { }
 		void operator()(std::string text, std:: string   title) const { }
 		void operator()(std::string text, std::wstring * title) const { }
-		void operator()(std::string text, String         title) const { }
+		void operator()(std::string text, class String   title) const { }
 		//
 		void operator()(std::wstring text, char         * title) const { }
 		void operator()(std::wstring text, std:: string   title) const { }
 		void operator()(std::wstring text, std::wstring * title) const { }
-		void operator()(std::wstring text, String         title) const { }
+		void operator()(std::wstring text, class String   title) const { }
 		//
-		void operator()(String text, char         * title) const { }
-		void operator()(String text, std:: string   title) const { }
-		void operator()(String text, std::wstring * title) const { }
-		void operator()(String text, String         title) const { }
+		void operator()(class String text, char         * title) const { }
+		void operator()(class String text, std:: string   title) const { }
+		void operator()(class String text, std::wstring * title) const { }
+		void operator()(class String text, class String   title) const { }
 	};
-	template < String ErrorText >
+	template < class String ErrorText >
 	struct onError
 	{
 		void operator()(void               ) const { }
 		void operator()(char         * text) const { }
 		void operator()(std:: string   text) const { }
 		void operator()(std::wstring   text) const { }
-		void operator()(String         text) const { }
+		void operator()(class String         text) const { }
 		//
 		void operator()(char * text, char         * title) const { }
 		void operator()(char * text, std:: string   title) const { }
 		void operator()(char * text, std::wstring * title) const { }
-		void operator()(char * text, String         title) const { }
+		void operator()(char * text, class String   title) const { }
 		//
 		void operator()(std::string text, char         * title) const { }
 		void operator()(std::string text, std:: string   title) const { }
 		void operator()(std::string text, std::wstring * title) const { }
-		void operator()(std::string text, String         title) const { }
+		void operator()(std::string text, class String   title) const { }
 		//
 		void operator()(std::wstring text, char         * title) const { }
 		void operator()(std::wstring text, std:: string   title) const { }
 		void operator()(std::wstring text, std::wstring * title) const { }
-		void operator()(std::wstring text, String         title) const { }
+		void operator()(std::wstring text, class String   title) const { }
 		//
-		void operator()(String text, char         * title) const { }
-		void operator()(String text, std:: string   title) const { }
-		void operator()(String text, std::wstring * title) const { }
-		void operator()(String text, String         title) const { }
+		void operator()(class String text, char         * title) const { }
+		void operator()(class String text, std:: string   title) const { }
+		void operator()(class String text, std::wstring * title) const { }
+		void operator()(class String text, class String   title) const { }
 	};
 	template < std::wstring ErrorText >
 	struct onError
@@ -118,27 +118,27 @@ namespace kallup::Exception
 		void operator()(char         * text) const { }
 		void operator()(std:: string   text) const { }
 		void operator()(std::wstring   text) const { }
-		void operator()(String         text) const { }
+		void operator()(class String         text) const { }
 		//
 		void operator()(char * text, char         * title) const { }
 		void operator()(char * text, std:: string   title) const { }
 		void operator()(char * text, std::wstring * title) const { }
-		void operator()(char * text, String         title) const { }
+		void operator()(char * text, class String   title) const { }
 		//
 		void operator()(std::string text, char         * title) const { }
 		void operator()(std::string text, std:: string   title) const { }
 		void operator()(std::string text, std::wstring * title) const { }
-		void operator()(std::string text, String         title) const { }
+		void operator()(std::string text, class String   title) const { }
 		//
 		void operator()(std::wstring text, char         * title) const { }
 		void operator()(std::wstring text, std:: string   title) const { }
 		void operator()(std::wstring text, std::wstring * title) const { }
-		void operator()(std::wstring text, String         title) const { }
+		void operator()(std::wstring text, class String   title) const { }
 		//
-		void operator()(String text, char         * title) const { }
-		void operator()(String text, std:: string   title) const { }
-		void operator()(String text, std::wstring * title) const { }
-		void operator()(String text, String         title) const { }
+		void operator()(class String text, char         * title) const { }
+		void operator()(class String text, std:: string   title) const { }
+		void operator()(class String text, std::wstring * title) const { }
+		void operator()(class String text, class String   title) const { }
 	};
 	template < std::string ErrorText >
 	struct onError
@@ -147,27 +147,27 @@ namespace kallup::Exception
 		void operator()(char         * text) const { }
 		void operator()(std:: string   text) const { }
 		void operator()(std::wstring   text) const { }
-		void operator()(String         text) const { }
+		void operator()(class String         text) const { }
 		//
 		void operator()(char * text, char         * title) const { }
 		void operator()(char * text, std:: string   title) const { }
 		void operator()(char * text, std::wstring * title) const { }
-		void operator()(char * text, String         title) const { }
+		void operator()(char * text, class String   title) const { }
 		//
 		void operator()(std::string text, char         * title) const { }
 		void operator()(std::string text, std:: string   title) const { }
 		void operator()(std::string text, std::wstring * title) const { }
-		void operator()(std::string text, String         title) const { }
+		void operator()(std::string text, class String   title) const { }
 		//
 		void operator()(std::wstring text, char         * title) const { }
 		void operator()(std::wstring text, std:: string   title) const { }
 		void operator()(std::wstring text, std::wstring * title) const { }
-		void operator()(std::wstring text, String         title) const { }
+		void operator()(std::wstring text, class String   title) const { }
 		//
-		void operator()(String text, char         * title) const { }
-		void operator()(String text, std:: string   title) const { }
-		void operator()(String text, std::wstring * title) const { }
-		void operator()(String text, String         title) const { }
+		void operator()(class String text, char         * title) const { }
+		void operator()(class String text, std:: string   title) const { }
+		void operator()(class String text, std::wstring * title) const { }
+		void operator()(class String text, class String   title) const { }
 	};
 	template < char * ErrorText >
 	struct onError
@@ -176,27 +176,27 @@ namespace kallup::Exception
 		void operator()(char         * text) const { }
 		void operator()(std:: string   text) const { }
 		void operator()(std::wstring   text) const { }
-		void operator()(String         text) const { }
+		void operator()(class String         text) const { }
 		//
 		void operator()(char * text, char         * title) const { }
 		void operator()(char * text, std:: string   title) const { }
 		void operator()(char * text, std::wstring * title) const { }
-		void operator()(char * text, String         title) const { }
+		void operator()(char * text, class String   title) const { }
 		//
 		void operator()(std::string text, char         * title) const { }
 		void operator()(std::string text, std:: string   title) const { }
 		void operator()(std::string text, std::wstring * title) const { }
-		void operator()(std::string text, String         title) const { }
+		void operator()(std::string text, class String   title) const { }
 		//
 		void operator()(std::wstring text, char         * title) const { }
 		void operator()(std::wstring text, std:: string   title) const { }
 		void operator()(std::wstring text, std::wstring * title) const { }
-		void operator()(std::wstring text, String         title) const { }
+		void operator()(std::wstring text, class String   title) const { }
 		//
-		void operator()(String text, char         * title) const { }
-		void operator()(String text, std:: string   title) const { }
-		void operator()(String text, std::wstring * title) const { }
-		void operator()(String text, String         title) const { }
+		void operator()(class String text, char         * title) const { }
+		void operator()(class String text, std:: string   title) const { }
+		void operator()(class String text, std::wstring * title) const { }
+		void operator()(class String text, class String   title) const { }
 	};
 
 	// ---------------------------------------

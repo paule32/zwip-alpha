@@ -32,7 +32,7 @@ namespace kallup::Exception
 		//SUCCESS 			= 0x0000,
 		success() {
 			return 0x0000;
-		}
+		},
 		INVALID_FUNCTION	= 0x0001,
 		FILE_NOT_FOUND      = 0x0002,
 		PATH_NOT_FOUND      = 0x0003,

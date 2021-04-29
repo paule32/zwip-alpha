@@ -30,9 +30,7 @@ namespace kallup::Exception
 	// ---------------------------------------
 	enum Error : int16_t {
 		//SUCCESS 			= 0x0000,
-		success() {
-			return 0x0000;
-		},
+		success = 0x0,
 		INVALID_FUNCTION	= 0x0001,
 		FILE_NOT_FOUND      = 0x0002,
 		PATH_NOT_FOUND      = 0x0003,

@@ -51,10 +51,10 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	template< int i>
+	template< int ec>
 	struct onError
 	{
-		void operator() { }
+		void operator()(void) const { }
 		
 		/*void call(std::wstring text, std::wstring title) {
 			if (NC != ERROR_SUCCESS) {

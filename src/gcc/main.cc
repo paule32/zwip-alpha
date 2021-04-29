@@ -34,5 +34,5 @@ int main(void)
 #endif
 {	
 	onError<handleError>
-    return 0;
+    return true;
 }

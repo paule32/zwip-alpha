@@ -33,7 +33,7 @@ DllMain(
 int main(void)
 #endif
 {	
-	onError<3, handleError> 	error;
+	onError<Error::SUCCESS, handleError> 	error;
 	error.call(L"my text", L"my title");
     return 0;
 }

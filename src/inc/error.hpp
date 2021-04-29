@@ -54,8 +54,8 @@ namespace kallup::Exception
 	template< Error NC >
 	struct onError
 	{
-		/*
-		void call(std::wstring text, std::wstring title) {
+		
+		/*void call(std::wstring text, std::wstring title) {
 			if (NC != ERROR_SUCCESS) {
 				EF(text, title);
 				throw Exception(NC, text, title);

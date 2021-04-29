@@ -20,8 +20,6 @@ typedef struct {
 }
 WINDOWS_ERROR_CODES;
 
-# undef error
-
 // ---------------------------------------
 // kallup::Exception ns:
 // ---------------------------------------
@@ -30,7 +28,7 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// win32api C++ "const" definition's:
 	// ---------------------------------------
-	enum error : int16_t {
+	enum Error : int16_t {
 		SUCCESS 			= 0x0000,
 		INVALID_FUNCTION	= 0x0001,
 		FILE_NOT_FOUND      = 0x0002,
@@ -40,13 +38,13 @@ namespace kallup::Exception
 		INVALID_HANDLE      = 0x0006
 	};
 
-	error        ErrorCode;  // number of code
+	Error        ErrorCode;  // number of code
 	std::wstring ErrorText;  // text for exception
 
 	class Exception: public std::exception {
 	public:
 		virtual const std::wstring text() const throw () { return ErrorText; }
-		virtual const error        code() const throw () { return ErrorCode; }
+		virtual const Error        code() const throw () { return ErrorCode; }
 	};
 		
 	// ---------------------------------------
@@ -61,7 +59,7 @@ namespace kallup::Exception
 				EF(text, title);
 				throw Exception(NC, text, title);
 			}
-		}*/
+		}
 	};
 
 	// ---------------------------------------

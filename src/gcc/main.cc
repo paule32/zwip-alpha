@@ -33,6 +33,6 @@ DllMain(
 int main(void)
 #endif
 {	
-	onError<kallup::Exception::error::success( handleError(L"my text", L"my title")) >
+	onError<Error::success( handleError(L"my text", L"my title")) >
     return 0;
 }

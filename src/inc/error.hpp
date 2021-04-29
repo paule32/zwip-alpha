@@ -56,7 +56,7 @@ namespace kallup::Exception
 	{
 		void operator()(void) const {
 			if (std::is_same_v<int, Type>) {
-				MessageBox(0,"same type, "info", MB_OK);
+				MessageBoxW(0,L"same type", L"info", MB_OK);
 			}
 		}
 		

@@ -12,14 +12,14 @@
 // ---------------------------------------
 // string handling: utf-16 as default:
 // ---------------------------------------
-namespace kallup::string
+namespace kallup::String
 {
 	class ansi  { };
 	class utf8  { };
 	class utf16 { };
 	class utf32 { };
 	
-	class String { };
+	class String { public: String() { } };
 	template <class CharType>
 	class String
 	{

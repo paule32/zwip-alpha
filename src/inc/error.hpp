@@ -40,13 +40,13 @@ namespace kallup::Exception
 		INVALID_HANDLE      = 0x0006
 	};
 
-	Error        ErrorCode;  // number of code
+	error        ErrorCode;  // number of code
 	std::wstring ErrorText;  // text for exception
 
 	class Exception: public std::exception {
 	public:
 		virtual const std::wstring text() const throw () { return ErrorText; }
-		virtual const Error        code() const throw () { return ErrorCode; }
+		virtual const error        code() const throw () { return ErrorCode; }
 	};
 		
 	// ---------------------------------------

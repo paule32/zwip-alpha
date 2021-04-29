@@ -13,6 +13,8 @@
 # include "windows.pch.hpp" 	// windows: 10 pro
 # include "common.pch.hpp"		// common
 
+# include "string.hpp"
+
 // the list of error codes:
 typedef struct {
 	std::int16_t  ecCode;

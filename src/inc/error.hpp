@@ -51,7 +51,7 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	template< Error NC >
+	template< void std::function(std::wstring text, std::wstring title) >
 	struct onError
 	{
 		

@@ -82,9 +82,9 @@ namespace kallup::Exception
 		void operator()(class String text, std::wstring * title) const { }
 		void operator()(class String text, class String   title) const { }
 	};
-	template < class kallup::String::String ErrorText >
+	template < class String >
 	struct onError
-	{
+	{ };
 		void operator()(void               ) const { }
 		void operator()(char         * text) const { }
 		void operator()(std:: string   text) const { }

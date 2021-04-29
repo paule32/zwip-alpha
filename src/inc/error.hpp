@@ -50,19 +50,16 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	template< Error NC,
-		std::function<void(
-			std::wstring text,
-			std::wstring title)
-		> &EF>
+	template< error NC >
 	struct onError
 	{
+		/*
 		void call(std::wstring text, std::wstring title) {
 			if (NC != ERROR_SUCCESS) {
 				EF(text, title);
 				throw Exception(NC, text, title);
 			}
-		}
+		}*/
 	};
 
 	// ---------------------------------------

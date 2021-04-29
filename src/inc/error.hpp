@@ -51,10 +51,14 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	template< int ec>
+	template <class Type>
 	struct onError
 	{
-		void operator()(void) const { }
+		void operator()(void) const {
+			if (std::is_same_v<int, Type>) {
+				MessageBox(0,"same type, "info", MB_OK);
+			}
+		}
 		
 		/*void call(std::wstring text, std::wstring title) {
 			if (NC != ERROR_SUCCESS) {

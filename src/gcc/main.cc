@@ -17,7 +17,7 @@ constexpr std::function<
 {
 //	wchar_t s1[100] = { &text.c_str() };
 //	MessageBoxW(0, s1, title.c_str(), MB_OK); 
-};
+}
 
 // -----------------------------------------------------
 // main: EntryPoint of application.

@@ -53,8 +53,8 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	template < Error ErrorCode >
-	struct onError
+	template <>
+	struct onError<Error ErrorCode>
 	{
 		void operator()(void               ) const { }
 		void operator()(char         * text) const { }
@@ -82,8 +82,8 @@ namespace kallup::Exception
 		void operator()(class String text, std::wstring * title) const { }
 		void operator()(class String text, class String   title) const { }
 	};
-	template < class String >
-	struct onError
+	template <>
+	struct onError<class String>
 	{ };
 		void operator()(void               ) const { }
 		void operator()(char         * text) const { }

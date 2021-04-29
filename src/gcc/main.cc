@@ -6,6 +6,7 @@
 // -----------------------------------------------------
 
 # include "common.pch.hpp"
+using namespace kallup::Exception;
 
 // lambda [capture locals](arguments to lambda)
 std::function<
@@ -31,10 +32,8 @@ DllMain(
 #else
 int main(void)
 #endif
-{
-	namespace zwip = kallup::Exception;
-	
-	zwip::onError<3, handleError> 	error;
+{	
+	onError<3, handleError> 	error;
 	error.call(L"my text", L"my title");
     return 0;
 }

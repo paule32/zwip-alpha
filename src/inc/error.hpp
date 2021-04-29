@@ -13,7 +13,7 @@
 # include "windows.pch.hpp" 	// windows: 10 pro
 # include "common.pch.hpp"		// common
 
-# include "string.hpp"
+using namespace kallup::String
 
 // the list of error codes:
 typedef struct {

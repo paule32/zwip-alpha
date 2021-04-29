@@ -51,7 +51,7 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	template <class Type>
+	template < Error EC>
 	struct onError
 	{
 		void operator()(void) const {

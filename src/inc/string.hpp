@@ -20,6 +20,7 @@ namespace kallup::String
 	class utf32 { };
 	
 	class String { public: String() { } };
+	/*
 	template <class CharType>
 	class String
 	{
@@ -27,6 +28,6 @@ namespace kallup::String
 		String(CharType Type)
 		{
 		}
-	};  //
+	};*/  //
 };	    // namespace: kallup::string
 #endif	// header:    String.hpp

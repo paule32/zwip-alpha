@@ -20,6 +20,8 @@ typedef struct {
 }
 WINDOWS_ERROR_CODES;
 
+# undef error
+
 // ---------------------------------------
 // kallup::Exception ns:
 // ---------------------------------------

@@ -29,7 +29,7 @@
 # include <exception>
 
 // common framework header's:
-# include "error.hpp"
 # include "string.hpp"
+# include "error.hpp"
 
 #endif

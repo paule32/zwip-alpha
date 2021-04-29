@@ -41,7 +41,7 @@ std::function<
 #else
 int main(void)
 #endif
-{	
+{
 	onError<1>();
 	
 	#ifdef TARGET_DLL 

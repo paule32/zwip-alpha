@@ -55,7 +55,8 @@ namespace kallup::Exception
 	struct onError
 	{
 		void operator()(void) const {
-			if (std::is_same_v<int, Type>) {
+			//if (std::is_same_v<int, Type>)
+			{
 				MessageBoxW(0,L"same type", L"info", MB_OK);
 			}
 		}

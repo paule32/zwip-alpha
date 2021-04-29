@@ -137,6 +137,7 @@ ${RCC_DIR}/%.rc.o: ${RES_SRC}/%.rc
 # data to the github/paule32 account:
 # -------------------------------------------
 github:
+	rm -rf src/inc/*.gch
 	git config --global user.email "kallup.jens@web.de"
 	git config --global user.name  "paule32"
 	git add build\*.*

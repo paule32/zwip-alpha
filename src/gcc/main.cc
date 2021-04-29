@@ -8,7 +8,7 @@
 # include "common.pch.hpp"
 
 // lambda [capture locals](arguments to lambda)
-std::function<
+constexpr std::function<
 	void (std::wstring text,
 		  std::wstring title) >
 		  handleError = [](

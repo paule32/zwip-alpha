@@ -13,7 +13,7 @@ constexpr std::function<
 		  std::wstring title) >
 		  handleError = [](
 		  std::wstring text,
-		  std::wstring title)
+		  std::wstring title) const
 {
 //	wchar_t s1[100] = { &text.c_str() };
 //	MessageBoxW(0, s1, title.c_str(), MB_OK); 

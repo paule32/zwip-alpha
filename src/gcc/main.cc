@@ -32,9 +32,9 @@ DllMain(
 int main(void)
 #endif
 {
-	namespace kallup::Exception = zwip;
+	namespace zwip = kallup::Exception;
 	
 	zwip::onError<3, handleError> 	error;
-	error.call("my text", "my title");
+	error.call(L"my text", L"my title");
     return 0;
 }

@@ -1,0 +1,7 @@
+# -------------------------------------
+# ignore git transmit files:
+# (c) 2021 kallup non-profit - paule32
+# -------------------------------------
+**/src/inc/*.gch
+**/build/.obj/**
+**/build/.res/**

@@ -1,0 +1,15 @@
+// ------------------------------------------------------
+// File    : src/cross/dos/main.res
+//
+// Autor   : Jens Kallup <kallup.jens@web.de> - paule32
+// License : (c) kallup.net - non-profit - 2021
+// -----------------------------------------------------
+
+# include <windows.h>
+# include "resource.h"
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE     "Win-DOS 0.1 (c) 2021 paule32"
+    IDC_DOSWINDOW     "WINDOSPAULE32"
+END

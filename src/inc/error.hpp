@@ -51,12 +51,12 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	template < int ErrorCode >
-	struct onError
-	{
-		void operator()(void) const {
-		}
-	};
+	//template < int ErrorCode >
+	//struct onError
+	//{
+	//	void operator()(void) const {
+	//	}
+	//};
 	template < Error ErrorCode >
 	struct onError
 	{

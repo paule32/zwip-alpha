@@ -33,6 +33,6 @@ DllMain(
 int main(void)
 #endif
 {	
-	onError<handleError>;
+	onError<handleError> err;
     return true;
 }

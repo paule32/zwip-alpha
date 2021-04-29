@@ -60,7 +60,7 @@ namespace kallup::Exception
 				EF(text, title);
 				throw Exception(NC, text, title);
 			}
-		}
+		*/
 	};
 
 	// ---------------------------------------

@@ -34,8 +34,6 @@ int main(void)
 {
 	namespace zwip = kallup::Exception;
 
-
-
 	auto e = zwip::onError<3, handleError(L"1212", L"1212212112")>;
 	
 	//error.call("my text", "my title");

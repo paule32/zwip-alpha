@@ -24,11 +24,20 @@ std::function<
 // main: EntryPoint of application.
 // -----------------------------------------------------
 #ifdef WINDOWS
-BOOL WINAPI
-DllMain(
-	HINSTANCE hinstDLL ,	// handle to DLL module
-    DWORD	  fdwReason,	// reason for calling function
-    LPVOID    lpReserved)
+	#ifdef TARGET_DLL
+	BOOL WINAPI
+	DllMain(
+		HINSTANCE hinstDLL ,	// handle to DLL module
+		DWORD	  fdwReason,	// reason for calling function
+		LPVOID    lpReserved)
+	#else
+	int WINAPI
+	WinMain(
+		HINSTANCE hInstance,
+		HINSTANCE hPrevInstance,
+		PWSTR     pCmdLine,
+		int       nCmdShow)
+	#endif
 #else
 int main(void)
 #endif

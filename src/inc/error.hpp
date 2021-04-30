@@ -78,7 +78,7 @@ namespace kallup::Exception
 		onError(const wchar_t* text, const wchar_t* title) {
 			MessageBoxW(0,text,title,MB_OK);
 		}
-		onError(auto Type) {
+		onError(auto Type1) {
 			// todo
 		}
 		onError(auto Type1, auto Type2) {

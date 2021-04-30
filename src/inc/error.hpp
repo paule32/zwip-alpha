@@ -70,7 +70,7 @@ namespace kallup::Exception
 	class toString {
 		
 	};
-	template <T Type>
+	template <auto Type t>
 	struct onError {
 		static wchar_t const* toString() {
 			if (is_same<int, Type>) {

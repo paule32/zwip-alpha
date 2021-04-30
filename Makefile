@@ -140,7 +140,6 @@ github:
 	rm -rf src/inc/*.gch
 	git config --global user.email "kallup.jens@web.de"
 	git config --global user.name  "paule32"
-	git add build\*.*
 	git add src\*.*
 	git commit -a -m "update"
 	git push

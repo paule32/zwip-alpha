@@ -43,7 +43,7 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// win32api C++ "const" text definition's:
 	// ---------------------------------------
-	enum class ErrorText {
+	enum wchar_t* ErrorText {
 		success                      = L"The operation completed successfully.",
 		invalid_function             = L"Incorrect function.",
 		file_not_found               = L"The system cannot find the file specified.",

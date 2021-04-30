@@ -30,7 +30,7 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// win32api C++ "const" definition's:
 	// ---------------------------------------
-	enum Error {
+	enum class Error {
 		//SUCCESS 			= 0x0000,
 		success = 0x0,
 		INVALID_FUNCTION	= 0x0001,

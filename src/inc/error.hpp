@@ -53,7 +53,7 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	template < typename T >
+	template < auto T >
 	struct onError
 	{
 		void operator()(void               ) const { }

@@ -43,9 +43,8 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// win32api C++ "const" text definition's:
 	// ---------------------------------------
-	/*enum ErrorText : wchar_t {
-		success                      = L"The operation completed successfully.",
-		invalid_function             = L"Incorrect function.",
+	constexpr wchar_t* success                      = L"The operation completed successfully.";
+		/*invalid_function             = L"Incorrect function.",
 		file_not_found               = L"The system cannot find the file specified.",
 		path_no_found                = L"The system cannot find the path specified.",
 		too_many_open_files          = L"The system cannot open the file.",

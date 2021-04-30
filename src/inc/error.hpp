@@ -71,7 +71,7 @@ namespace kallup::Exception
 	struct onError {
 		onError(void) {
 			// todo
-			if (std::is_same_v<decltype(Type),decltype(ErrorCode)>) {
+			if (std::is_same_v<decltype(Type), decltype(m_ErrorCode)>) {
 				MessageBoxW(0, L"infoooor", L"iiiir",MB_OK);
 			}
 			MessageBoxW(0, L"Unknown Error", L"Error",MB_OK);

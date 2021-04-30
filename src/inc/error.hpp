@@ -80,10 +80,13 @@ namespace kallup::Exception
 			return L"unknown";
 		}
 	};
-	template <> struct onError<ErrorCode::success> {
-		//static wchar_t const* toString() {
-		toString* text;
-		toString& operator.() {
+	template <> struct onError<
+		ErrorCode::success,
+		std::function<
+			void(wchar_t* text,
+				 wchar_t* title)
+		&EF > {
+		static wchar_t const* toString() {
 			MessageBoxW(0,success,L"xxxxxx",MB_OK);
 			return L"success fully";
 		}

@@ -40,7 +40,6 @@
 # include <regex>
 
 // common framework header's:
-# include "raii.hpp"
 # include "string.hpp"
 # include "error.hpp"
 

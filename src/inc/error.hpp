@@ -14,8 +14,6 @@
 # include "common.pch.hpp"		// common
 
 using namespace std;
-//
-using namespace kallup::RAII;
 using namespace kallup::String;
 
 // ---------------------------------------

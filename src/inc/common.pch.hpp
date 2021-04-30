@@ -25,9 +25,9 @@
 
 // common std c++ header's:
 # include <cwchar>            // utf-16: default for windows 10 pro
-# include <typeinfo>          // run-time-type-informations: typeid(<class>)
 # include <iostream>
 # include <string>
+# include <iterator>
 # include <fstream>
 # include <sstream>
 # include <vector>
@@ -37,6 +37,7 @@
 # include <functional>
 # include <cstdint>
 # include <exception>
+# include <regex>
 
 // common framework header's:
 # include "string.hpp"

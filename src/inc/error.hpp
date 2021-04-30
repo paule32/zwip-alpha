@@ -1,11 +1,11 @@
 // ------------------------------------------------------
-// File    : src/cross/error.h
+// File    : src/cross/Exception.hpp
 //
 // Autor   : Jens Kallup <kallup.jens@web.de> - paule32
 // License : (c) kallup.net - non-profit - 2021
 // -----------------------------------------------------
-#ifndef __EXCEPTIONS_H__
-#define __EXCEPTIONS_H__
+#ifndef __KALLUP_EXCEPTIONS_H__
+#define __KALLUP_EXCEPTIONS_H__
 
 // ---------------------------------------
 // pre-compiled header files:
@@ -14,6 +14,8 @@
 # include "common.pch.hpp"		// common
 
 using namespace std;
+//
+using namespace kallup::RAII;
 using namespace kallup::String;
 
 // ---------------------------------------
@@ -23,7 +25,7 @@ namespace kallup::Exception
 {
 	// some short mapper:
 	typedef wchar_t* ErrorText;
-	
+  
 	// ---------------------------------------
 	// win32api C++ "const" code definition's:
 	// ---------------------------------------
@@ -73,27 +75,37 @@ namespace kallup::Exception
 	template <auto Type>
 	struct onError {
 		static wchar_t const* toString() {
-			switch (typeid(Type)) {
-				case typeid(int):
-					// todo: int
-				break;
-				case typeid(ErrorCode):
-					// todo: ErrorCode
-				break;
-				default:
-					// todo: ErrorCode
-				break;
+			if (is_same<Type, int>) {
+				// todo: int
+			}	else
+			if (std::is_same<Type, ErrorCode>) {
+				// todo: ErrorCode
 			}
-			return L"unknown";
-		}
-		onError(const wchar_t* text, const wchar_t* title) {
-			MessageBoxW(0,text,title,MB_OK);
+			else {
+				return L"unknown:1";
+			}
 		}
 		onError(auto Type1) {
-			// todo
+			if (is_same<Type1, wchar_t>) {
+				// todo
+			}
+			else {
+				return L"unknown:2";
+			}
 		}
-		onError(auto Type1, auto Type2) {
-			// todo
+		onError(auto Type1, auto Type2)
+		{
+			if (is_same<Type1, wchar_t>) {
+				if (is_same<Type2, wchar_t>) {
+					MessageBoxW(0,text,title,MB_OK);
+				}
+				else {
+					return L"unknown";
+				}
+			}
+			else {
+				return L"unknown:3";
+			}
 		}
 	};
 	/*

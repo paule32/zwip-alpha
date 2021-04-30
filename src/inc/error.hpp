@@ -43,24 +43,24 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// win32api C++ "const" text definition's:
 	// ---------------------------------------
-	enum ErrorText : wchar_t {
+	/*enum ErrorText : wchar_t {
 		success                      = L"The operation completed successfully.",
 		invalid_function             = L"Incorrect function.",
 		file_not_found               = L"The system cannot find the file specified.",
 		path_no_found                = L"The system cannot find the path specified.",
 		too_many_open_files          = L"The system cannot open the file.",
 		access_denied                = L"Access is denied"
-	};
+	};*/
 
 	// ---------------------------------------------
 	// -D LIB_IMPLEMENTATION : only at impl. time !
 	// ---------------------------------------------
 	#ifndef LIB_IMPLEMENTATION
 		extern ErrorCode m_ErrorCode;  // number of code
-		extern ErrorText m_ErrorText;  // text for exception
+		//extern ErrorText m_ErrorText;  // text for exception
 	#else
 		ErrorCode m_ErrorCode;
-		ErrorText m_ErrorText;
+		//ErrorText m_ErrorText;
 	#endif
 
 	class Exception: public std::exception {

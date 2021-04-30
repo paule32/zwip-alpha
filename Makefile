@@ -138,6 +138,8 @@ ${RCC_DIR}/%.rc.o: ${RES_SRC}/%.rc
 # -------------------------------------------
 github:
 	rm -rf src/inc/*.gch
+	rm -rf ./build/.obj
+	rm -rf ./build/.res
 	git config --global user.email "kallup.jens@web.de"
 	git config --global user.name  "paule32"
 	git add src\*.*

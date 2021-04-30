@@ -78,7 +78,7 @@ namespace kallup::Exception
 		};
 		onError(const wchar_t* text, const wchar_t* title) {
 			// todo
-			if (decltype(Type) == decltype(m_ErrorCode)) {
+			if (std::is_same_v<decltype(Type), decltype(m_ErrorCode)>) {
 				MessageBoxW(0, L" aaa  infoooor", L"iiiir",MB_OK);
 			}
 			MessageBoxW(0, text, title,MB_OK);

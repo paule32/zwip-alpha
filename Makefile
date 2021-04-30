@@ -127,7 +127,7 @@ ${OUT_DIR}/libzwip.exe: ${OBJ_SOURCE_FILES} ${RCC_FILES}
 	${STRIP}  $@
 
 ${CXX_OBJ}/%.cc.o: ${CXX_SRC}/%.cc
-	${CXX} ${CXX_FLAGS} -DLIB_IMPL -c $^ -o $@
+	${CXX} ${CXX_FLAGS} -fconcepts -DLIB_IMPL -c $^ -o $@
 	
 ${RCC_DIR}/%.rc.o: ${RES_SRC}/%.rc
 	${WINDRES} ${INCLUDES_PATH} $^ -O coff $@

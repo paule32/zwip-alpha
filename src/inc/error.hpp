@@ -94,10 +94,6 @@ namespace kallup::Exception
 			{
 				MessageBoxW(0,text,title,MB_OK);
 			}
-			else {
-				// todo
-				// L"unknown:3";
-			}
 		};
 	};
 	/*

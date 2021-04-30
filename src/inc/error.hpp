@@ -77,8 +77,8 @@ namespace kallup::Exception
 	template <
 		ErrorCode n,
 		std::function<
-			void(wchar_t *text,
-				 wchar_t *title)> EF>
+			void(wchar_t* text,
+				 wchar_t* title)> &EF>
 	struct onError {
 		static wchar_t const* toString() {
 			return L"unknown";

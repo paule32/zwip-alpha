@@ -14,6 +14,8 @@
 # include "common.pch.hpp"		// common
 
 using namespace std;
+//
+using namespace kallup::RAII;
 using namespace kallup::String;
 
 // ---------------------------------------
@@ -67,33 +69,15 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	class toString {
-		
-	};
-	template <typename T1>
+	template <typename T>
 	struct onError {
-		wchar_t const* toString() {
-			if (std::is_same< T1, ErrorCode >::value ) {
-				// todo: ErrorCode
-			}
-			else {
-				return L"unknown:1";
-			}
-		}
-		onError(T1 t1) {
-			if (is_same< decltype(t1), wchar_t >::value ) {
-				// todo
-			}
-			else {
-				// todo
-				// L"unknown:2";
-			}
+		onError(void) {
+			// todo
+			MessageBoxW(0, L"Unknown Error", L"Error",MB_OK);
 		};
-		onError(wchar_t* text, wchar_t* title)
-		{
-			{
-				MessageBoxW(0,text,title,MB_OK);
-			}
+		onError(const wchar_t* text, const wchar_t* title) {
+			// todo
+			MessageBoxW(0, text, title,MB_OK);
 		};
 	};
 	/*

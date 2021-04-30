@@ -81,7 +81,7 @@ namespace kallup::Exception
 			}
 		}
 		onError(T1 t1) {
-			if (is_same< t1, wchar_t >::value ) {
+			if (is_same< decltype(t1), wchar_t >::value ) {
 				// todo
 			}
 			else {

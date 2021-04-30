@@ -89,12 +89,12 @@ namespace kallup::Exception
 				// L"unknown:2";
 			}
 		};
-		onError(T1, T2)
+		onError(T1 text, T2 title)
 		{
 			if (is_same< T1, wchar_t >::value
 			&&  is_same< T2, wchar_t >::value )
 			{
-				MessageBoxW(0,decltype(T1),T2,MB_OK);
+				MessageBoxW(0,text,title,MB_OK);
 			}
 			else {
 				// todo

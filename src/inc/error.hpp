@@ -80,7 +80,7 @@ namespace kallup::Exception
 				return L"unknown:1";
 			}
 		}
-		onError(T Type1) {
+		onError(auto Type1) {
 			if (is_same< Type1, wchar_t >::value ) {
 				// todo
 			}
@@ -89,7 +89,7 @@ namespace kallup::Exception
 				// L"unknown:2";
 			}
 		}
-		onError(Type1, Type2)
+		onError(auto Type1, auto Type2)
 		{
 			if (is_same< Type1, wchar_t >::value
 			&&  is_same< Type2, wchar_t >::value )

@@ -42,9 +42,9 @@ namespace kallup::Exception
 	// ---------------------------------------
 	constexpr wchar_t* success                      = L"The operation completed successfully.";
 	constexpr wchar_t* invalid_function             = L"Incorrect function.";
-	constexpr wchar_t* file_not_found               = L"The system cannot find the file specified.";
-	constexpr wchar_t* path_no_found                = L"The system cannot find the path specified.";
-	constexpr wchar_t* too_many_open_files          = L"The system cannot open the file.";
+	constexpr wchar_t* file_not_found               = L"%s find the file specified.";
+	constexpr wchar_t* path_no_found                = L"%s find the path specified.";
+	constexpr wchar_t* too_many_open_files          = L"%s open the file.";
 	constexpr wchar_t* access_denied                = L"Access is denied";
 	
 	// ---------------------------------------------

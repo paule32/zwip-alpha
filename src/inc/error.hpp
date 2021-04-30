@@ -74,25 +74,20 @@ namespace kallup::Exception
 	class toString {
 		
 	};
-	template <
-		ErrorCode n,
-		std::function<
-			void(wchar_t* text,
-				 wchar_t* title)> &EF >
+	template <ErrorCode n>
 	struct onError {
 		static wchar_t const* toString() {
 			return L"unknown";
 		}
 	};
 	template <>
-	struct onError<
-		ErrorCode::success,
-		std::function<
-			void(wchar_t* text,
-				 wchar_t* title)> &EF > {
+	struct onError<ErrorCode::success> {
 		static wchar_t const* toString() {
 			MessageBoxW(0,success,L"xxxxxx",MB_OK);
 			return L"success fully";
+		}
+		operator& ()(wchar_t* text, wchar_t* title) {
+			MessageBoxW(0,text,title,MB_OK);
 		}
 	};
 	/*

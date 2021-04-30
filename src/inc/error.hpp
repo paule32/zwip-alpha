@@ -94,7 +94,7 @@ namespace kallup::Exception
 			if (is_same< T1, wchar_t >::value
 			&&  is_same< T2, wchar_t >::value )
 			{
-				MessageBoxW(0,Type1,Type2,MB_OK);
+				MessageBoxW(0,T1,T2,MB_OK);
 			}
 			else {
 				// todo

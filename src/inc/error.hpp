@@ -70,7 +70,7 @@ namespace kallup::Exception
 	class toString {
 		
 	};
-	template <auto T1>
+	template <typename T1>
 	struct onError {
 		wchar_t const* toString() {
 			if (std::is_same< T1, ErrorCode >::value ) {
@@ -80,8 +80,8 @@ namespace kallup::Exception
 				return L"unknown:1";
 			}
 		}
-		onError(T1) {
-			if (is_same< T1, wchar_t >::value ) {
+		onError(T1 t1) {
+			if (is_same< t1, wchar_t >::value ) {
 				// todo
 			}
 			else {

@@ -14,8 +14,6 @@
 # include "common.pch.hpp"		// common
 
 using namespace std;
-//
-using namespace kallup::RAII;
 using namespace kallup::String;
 
 // ---------------------------------------
@@ -75,7 +73,7 @@ namespace kallup::Exception
 	template <auto Type>
 	struct onError {
 		static wchar_t const* toString() {
-			if (is_same<Type, int>) {
+			if (is_same<int, Type>) {
 				// todo: int
 			}	else
 			if (std::is_same<Type, ErrorCode>) {

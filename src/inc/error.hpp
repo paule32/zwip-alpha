@@ -67,7 +67,7 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	template <ErrorCode EC>
+	template <auto Type>
 	struct onError {
 		onError(void) {
 			// todo

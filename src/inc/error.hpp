@@ -72,7 +72,18 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	template <auto T>
+	template <ErrorCode n>
+	struct onError {
+		static wchar_t const* toString() {
+			return L"unknown";
+		}
+	};
+	template <> struct onError<ErrorCode::success> {
+		static wchar_t const* toString() {
+			return L"success fully";
+		}
+	};
+	/*
 	struct onError
 	{
 		template <void T>
@@ -104,7 +115,7 @@ namespace kallup::Exception
 		void operator()(class String text, std:: string   title) const { }
 		void operator()(class String text, std::wstring * title) const { }
 		void operator()(class String text, class String   title) const { }
-	};
+	};*/
 
 	// ---------------------------------------
 	// system warning codes, and the message:

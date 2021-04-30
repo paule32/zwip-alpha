@@ -65,7 +65,7 @@ namespace kallup::Exception
 
 	class Exception: public std::exception {
 	public:
-		virtual const ErrorText text() const throw () { return ErrorText; }
+		//virtual const ErrorText text() const throw () { return ErrorText; }
 		virtual const ErrorCode code() const throw () { return ErrorCode; }
 	};
 		

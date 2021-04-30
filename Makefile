@@ -123,8 +123,8 @@ ${INC_DIR}/%.pch.hpp.gch: ${INC_DIR}/%.pch.hpp
 	${CXX} ${CXX_FLAGS} -DLIB_IMPL -x c++-header -c $^ -o $@
 
 ${OUT_DIR}/libzwip.exe: ${OBJ_SOURCE_FILES} ${RCC_FILES}
-	${CXX} -o ${OUT_DIR}/libzwip.dll  $^ ${LIBS}
-	${STRIP}  ${OUT_DIR}/libzwip.dll
+	${CXX} -o $@  $^ ${LIBS}
+	${STRIP}  $@
 
 ${CXX_OBJ}/%.cc.o: ${CXX_SRC}/%.cc
 	${CXX} ${CXX_FLAGS} -DLIB_IMPL -c $^ -o $@

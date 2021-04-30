@@ -7,6 +7,16 @@
 #ifndef __COMMON_H__
 #define __COMMON_H__
 
+// ms-windows header's:
+# include <windows.h>
+# include <windowsx.h>
+# include <commctrl.h>
+# include <tchar.h>
+
+# include "resource.hpp"
+//-----
+
+
 // common header's:
 # include <stdlib.h>
 # include <stdio.h>

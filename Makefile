@@ -145,6 +145,8 @@ github:
 	git add src\*.*
 	git commit -a -m "update"
 	git push
+	mkdir -p ./build/.obj
+	mkdir -p ./build/.res
 
 # -------------------------------------------
 # this section, create temporary folder's ...

@@ -91,8 +91,8 @@ namespace kallup::Exception
 		};
 		onError(T1, T2)
 		{
-			if (is_same< T1, wchar_t* >::value
-			&&  is_same< T2, wchar_t* >::value )
+			if (is_same< T1, wchar_t >::value
+			&&  is_same< T2, wchar_t >::value )
 			{
 				MessageBoxW(0,T1,T2,MB_OK);
 			}

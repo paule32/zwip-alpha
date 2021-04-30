@@ -70,7 +70,7 @@ namespace kallup::Exception
 	class toString {
 		
 	};
-	template <typename T1, typename T2 = int>
+	template <typename T1>
 	struct onError {
 		wchar_t const* toString() {
 			if (std::is_same< T1, ErrorCode >::value ) {

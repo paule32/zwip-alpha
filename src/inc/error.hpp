@@ -28,21 +28,40 @@ WINDOWS_ERROR_CODES;
 namespace kallup::Exception
 {
 	// ---------------------------------------
-	// win32api C++ "const" definition's:
+	// win32api C++ "const" code definition's:
 	// ---------------------------------------
-	enum class Error {
-		//SUCCESS 			= 0x0000,
-		success = 0x0,
-		INVALID_FUNCTION	= 0x0001,
-		FILE_NOT_FOUND      = 0x0002,
-		PATH_NOT_FOUND      = 0x0003,
-		TOO_MANY_OPEN_FILES = 0x0004,
-		ACCESS_DENIED       = 0x0005,
-		INVALID_HANDLE      = 0x0006
+	enum class ErrorCode {
+		success             = 0x0000,
+		invalid_function    = 0x0001,
+		file_not_found      = 0x0002,
+		path_not_found      = 0x0003,
+		too_many_open_files = 0x0004,
+		access_denied       = 0x0005,
+		invalid_handle      = 0x0006
+	};
+	
+	// ---------------------------------------
+	// win32api C++ "const" text definition's:
+	// ---------------------------------------
+	enum class ErrorText {
+		success                      = L"The operation completed successfully.",
+		invalid_function             = L"Incorrect function.",
+		file_not_found               = L"The system cannot find the file specified.",
+		path_no_found                = L"The system cannot find the path specified.",
+		too_many_open_files          = L"The system cannot open the file.",
+		access_denied                = L"Access is denied"
 	};
 
-	Error        ErrorCode;  // number of code
-	std::wstring ErrorText;  // text for exception
+	// ---------------------------------------------
+	// -D LIB_IMPLEMENTATION : only at impl. time !
+	// ---------------------------------------------
+	#ifndef LIB_IMPLEMENTATION
+		extern ErrorCode m_ErrorCode;  // number of code
+		extern ErrorText m_ErrorText;  // text for exception
+	#else
+		ErrorCode m_ErrorCode;
+		ErrorText m_ErrorText;
+	#endif
 
 	class Exception: public std::exception {
 	public:
@@ -53,11 +72,15 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	template < auto T >
+	template <auto T>
 	struct onError
 	{
+		template <void T>
 		void operator()(void               ) const { }
+		
+		template <char* T>
 		void operator()(char         * text) const { }
+		
 		void operator()(std:: string   text) const { }
 		void operator()(std::wstring   text) const { }
 		void operator()(class String         text) const { }
@@ -103,16 +126,6 @@ namespace kallup::Exception
 		void call(std::string text, std::string title) {
 			EF(text, title);
 		}
-	};
-
-	WINDOWS_ERROR_CODES windows_error_code[] =
-	{
-		{ ERROR_SUCCESS,             "The operation completed successfully"      },
-		{ ERROR_INVALID_FUNCTION,    "Incorrect function."                       },
-		{ ERROR_FILE_NOT_FOUND,      "The system cannot find the file specified" },
-		{ ERROR_PATH_NOT_FOUND,      "The system cannot find the path specified" },
-		{ ERROR_TOO_MANY_OPEN_FILES, "The system cannot open the file"           },
-		{ ERROR_ACCESS_DENIED,       "Access is denied" },
 	};
 };	    // namespace: kallup::Exception
 #endif	// header:    Exception.hpp

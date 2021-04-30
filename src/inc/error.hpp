@@ -71,10 +71,16 @@ namespace kallup::Exception
 	struct onError {
 		onError(void) {
 			// todo
+			if (decltype(Type) == decltype(ErrorCode)) {
+				MessageBoxW(0, L"infoooor", L"iiiir",MB_OK);
+			}
 			MessageBoxW(0, L"Unknown Error", L"Error",MB_OK);
 		};
 		onError(const wchar_t* text, const wchar_t* title) {
 			// todo
+			if (decltype(Type) == decltype(ErrorCode)) {
+				MessageBoxW(0, L" aaa  infoooor", L"iiiir",MB_OK);
+			}
 			MessageBoxW(0, text, title,MB_OK);
 		};
 	};

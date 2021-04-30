@@ -21,6 +21,9 @@ using namespace kallup::String;
 // ---------------------------------------
 namespace kallup::Exception
 {
+	// some short mapper:
+	typedef wchar_t* ErrorText;
+	
 	// ---------------------------------------
 	// win32api C++ "const" code definition's:
 	// ---------------------------------------
@@ -49,16 +52,16 @@ namespace kallup::Exception
 	// ---------------------------------------------
 	#ifdef LIB_IMPL
 		extern ErrorCode m_ErrorCode;  // number of code
-		//extern ErrorText m_ErrorText;  // text for exception
+		extern ErrorText m_ErrorText;  // text for exception
 	#else
-		ErrorCode m_ErrorCode;
-		//ErrorText m_ErrorText;
+		ErrorCode m_ErrorCode = ErrorCode::success;
+		ErrorText m_ErrorText = L"";
 	#endif
 
 	class Exception: public std::exception {
 	public:
-		//virtual const ErrorText text() const throw () { return ErrorText; }
-		//virtual const ErrorCode code() const throw () { return ErrorCode; }
+		virtual const ErrorText toString() const throw () { return ErrorText; }
+		virtual const ErrorCode toCode  () const throw () { return ErrorCode; }
 	};
 		
 	// ---------------------------------------

@@ -86,7 +86,7 @@ namespace kallup::Exception
 			MessageBoxW(0,success,L"xxxxxx",MB_OK);
 			return L"success fully";
 		}
-		operator ()(wchar_t* text, wchar_t* title) {
+		operator (wchar_t* text, wchar_t* title)(void) {
 			MessageBoxW(0,text,title,MB_OK);
 		}
 	};

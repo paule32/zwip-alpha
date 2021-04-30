@@ -73,7 +73,7 @@ namespace kallup::Exception
 	template <auto Type>
 	struct onError {
 		static wchar_t const* toString() {
-			if (std::is_same< decltype(Type), decltype(ErrorCode) >) {
+			if (std::is_same< Type, ErrorCode >::value ) {
 				// todo: ErrorCode
 			}
 			else {
@@ -81,7 +81,7 @@ namespace kallup::Exception
 			}
 		}
 		onError(auto Type1) {
-			if (is_same< decltype(Type1), wchar_t >) {
+			if (is_same< Type1, wchar_t >::value ) {
 				// todo
 			}
 			else {
@@ -91,8 +91,8 @@ namespace kallup::Exception
 		}
 		onError(auto Type1, auto Type2)
 		{
-			if (is_same< decltype(Type1), wchar_t >
-			&&  is_same< decltype(Type2), wchar_t >)
+			if (is_same< Type1, wchar_t >::value
+			&&  is_same< Type2, wchar_t >::value )
 			{
 				MessageBoxW(0,Type1,Type2,MB_OK);
 			}

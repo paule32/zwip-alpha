@@ -80,8 +80,8 @@ namespace kallup::Exception
 				return L"unknown:1";
 			}
 		}
-		onError(T t1) {
-			if (is_same< t1, wchar_t >::value ) {
+		onError(T) {
+			if (is_same< T, wchar_t >::value ) {
 				// todo
 			}
 			else {

@@ -75,12 +75,6 @@ namespace kallup::Exception
 		static wchar_t const* toString() {
 			return L"unknown";
 		}
-	};
-	template <>
-	struct onError<ErrorCode EC> {
-		static wchar_t const* toString() {
-			return L"success fully";
-		}
 		onError(const wchar_t* text, const wchar_t* title) {
 			MessageBoxW(0,text,title,MB_OK);
 		}

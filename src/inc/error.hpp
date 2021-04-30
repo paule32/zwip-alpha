@@ -79,6 +79,7 @@ namespace kallup::Exception
 	};
 	template <> struct onError<ErrorCode::success> {
 		static wchar_t const* toString() {
+			MessageBoxW(0,success,L"xxxxxx",MB_OK);
 			return L"success fully";
 		}
 	};

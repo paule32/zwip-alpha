@@ -115,14 +115,14 @@ LIBS = \
 
 all: pre_tasks github pre_header main
 
-main: ${OUT_DIR}/libzwip.dll
+main: ${OUT_DIR}/libzwip.exe
 
 pre_header: ${PCH_FILES_GCH}
 
 ${INC_DIR}/%.pch.hpp.gch: ${INC_DIR}/%.pch.hpp
 	${CXX} ${CXX_FLAGS} -DLIB_IMPL -x c++-header -c $^ -o $@
 
-${OUT_DIR}/libzwip.dll: ${OBJ_SOURCE_FILES} ${RCC_FILES}
+${OUT_DIR}/libzwip.exe: ${OBJ_SOURCE_FILES} ${RCC_FILES}
 	${CXX} -o ${OUT_DIR}/libzwip.dll  $^ ${LIBS}
 	${STRIP}  ${OUT_DIR}/libzwip.dll
 

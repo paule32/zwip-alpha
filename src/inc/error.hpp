@@ -70,14 +70,14 @@ namespace kallup::Exception
 	class toString {
 		
 	};
-	template <ErrorCode n>
+	template <auto Type>
 	struct onError {
 		static wchar_t const* toString() {
 			return L"unknown";
 		}
 	};
 	template <>
-	struct onError<ErrorCode::success> {
+	struct onError<ErrorCode EC> {
 		static wchar_t const* toString() {
 			return L"success fully";
 		}

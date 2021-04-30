@@ -79,7 +79,7 @@ namespace kallup::Exception
 		};
 	};
 	template <>
-	struct onError<const wchar_t* text> {
+	struct onError<wchar_t* text> {
 		onError(void) {
 			// todo
 		};

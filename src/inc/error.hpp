@@ -78,7 +78,7 @@ namespace kallup::Exception
 		ErrorCode n,
 		std::function<
 			void(wchar_t *text,
-				 wchar_t *title) &EF>
+				 wchar_t *title)> &EF>
 	struct onError {
 		static wchar_t const* toString() {
 			return L"unknown";
@@ -88,7 +88,7 @@ namespace kallup::Exception
 		ErrorCode::success,
 		std::function<
 			void(wchar_t* text,
-				 wchar_t* title)
+				 wchar_t* title)>
 		&EF > {
 		static wchar_t const* toString() {
 			MessageBoxW(0,success,L"xxxxxx",MB_OK);

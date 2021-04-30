@@ -120,14 +120,14 @@ main: ${OUT_DIR}/libzwip.dll
 pre_header: ${PCH_FILES_GCH}
 
 ${INC_DIR}/%.pch.hpp.gch: ${INC_DIR}/%.pch.hpp
-	${CXX} ${CXX_FLAGS} -D LIB_IMPLEMENTATION -x c++-header -c $^ -o $@
+	${CXX} ${CXX_FLAGS} -DLIB_IMPL -x c++-header -c $^ -o $@
 
 ${OUT_DIR}/libzwip.dll: ${OBJ_SOURCE_FILES} ${RCC_FILES}
 	${CXX} -fPIC -shared -o ${OUT_DIR}/libzwip.dll  $^ ${LIBS}
 	${STRIP}  ${OUT_DIR}/libzwip.dll
 
 ${CXX_OBJ}/%.cc.o: ${CXX_SRC}/%.cc
-	${CXX} ${CXX_FLAGS} -c $^ -o $@
+	${CXX} ${CXX_FLAGS} -DLIB_IMPL -c $^ -o $@
 	
 ${RCC_DIR}/%.rc.o: ${RES_SRC}/%.rc
 	${WINDRES} ${INCLUDES_PATH} $^ -O coff $@

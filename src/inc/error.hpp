@@ -55,7 +55,7 @@ namespace kallup::Exception
 	// ---------------------------------------------
 	// -D LIB_IMPLEMENTATION : only at impl. time !
 	// ---------------------------------------------
-	#ifndef LIB_IMPLEMENTATION
+	#ifndef LIB_IMPL
 		extern ErrorCode m_ErrorCode;  // number of code
 		//extern ErrorText m_ErrorText;  // text for exception
 	#else

@@ -78,8 +78,8 @@ namespace kallup::Exception
 			MessageBoxW(0, text, title,MB_OK);
 		};
 	};
-	template <const wchar_t* text>
-	struct onError {
+	template <>
+	struct onError<const wchar_t* text> {
 		onError(void) {
 			// todo
 		};

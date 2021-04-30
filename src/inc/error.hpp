@@ -88,7 +88,7 @@ namespace kallup::Exception
 				// todo
 				// L"unknown:2";
 			}
-		}
+		};
 		onError(T t1, T t2)
 		{
 			if (is_same< Type1, wchar_t >::value
@@ -100,7 +100,7 @@ namespace kallup::Exception
 				// todo
 				// L"unknown:3";
 			}
-		}
+		};
 	};
 	/*
 	struct onError

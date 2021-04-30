@@ -102,8 +102,8 @@ PCH_FILES = \
 	${INC_DIR}/windows.pch.hpp
 # ----------
 PCH_FILES_GCH = \
-	${INC_DIR}/common.pch.hpp.gch\
-	${INC_DIR}/windows.pch.hpp.gch
+	${INC_DIR}/common.pch.hpp.gch
+#	${INC_DIR}/windows.pch.hpp.gch
 
 
 # windows library files ...

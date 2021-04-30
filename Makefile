@@ -120,7 +120,7 @@ main: ${OUT_DIR}/libzwip.exe
 pre_header: ${PCH_FILES_GCH}
 
 ${INC_DIR}/%.pch.hpp.gch: ${INC_DIR}/%.pch.hpp
-	${CXX} ${CXX_FLAGS} -DLIB_IMPL -x c++-header -c $^ -o $@
+	${CXX} ${CXX_FLAGS} -fconcepts -DLIB_IMPL -x c++-header -c $^ -o $@
 
 ${OUT_DIR}/libzwip.exe: ${OBJ_SOURCE_FILES} ${RCC_FILES}
 	${CXX} -o $@  $^ ${LIBS}

@@ -13,14 +13,8 @@
 //# include "windows.pch.hpp" 	// windows: 10 pro
 # include "common.pch.hpp"		// common
 
+using namespace std;
 using namespace kallup::String;
-
-// the list of error codes:
-typedef struct {
-	std::int16_t  ecCode;
-	std::string   ecError; 
-}
-WINDOWS_ERROR_CODES;
 
 // ---------------------------------------
 // kallup::Exception ns:
@@ -44,13 +38,12 @@ namespace kallup::Exception
 	// win32api C++ "const" text definition's:
 	// ---------------------------------------
 	constexpr wchar_t* success                      = L"The operation completed successfully.";
-		/*invalid_function             = L"Incorrect function.",
-		file_not_found               = L"The system cannot find the file specified.",
-		path_no_found                = L"The system cannot find the path specified.",
-		too_many_open_files          = L"The system cannot open the file.",
-		access_denied                = L"Access is denied"
-	};*/
-
+	constexpr wchar_t* invalid_function             = L"Incorrect function.";
+	constexpr wchar_t* file_not_found               = L"The system cannot find the file specified.";
+	constexpr wchar_t* path_no_found                = L"The system cannot find the path specified.";
+	constexpr wchar_t* too_many_open_files          = L"The system cannot open the file.";
+	constexpr wchar_t* access_denied                = L"Access is denied";
+	
 	// ---------------------------------------------
 	// -D LIB_IMPLEMENTATION : only at impl. time !
 	// ---------------------------------------------
@@ -83,11 +76,16 @@ namespace kallup::Exception
 	template <>
 	struct onError<ErrorCode::success> {
 		static wchar_t const* toString() {
-			MessageBoxW(0,success,L"xxxxxx",MB_OK);
 			return L"success fully";
 		}
 		onError(const wchar_t* text, const wchar_t* title) {
 			MessageBoxW(0,text,title,MB_OK);
+		}
+		onError(auto Type) {
+			// todo
+		}
+		onError(auto Type1, auto Type2) {
+			// todo
 		}
 	};
 	/*

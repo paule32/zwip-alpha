@@ -71,6 +71,9 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
+	class toString {
+		
+	};
 	template <ErrorCode n>
 	struct onError {
 		static wchar_t const* toString() {
@@ -78,7 +81,8 @@ namespace kallup::Exception
 		}
 	};
 	template <> struct onError<ErrorCode::success> {
-		static wchar_t const* toString() {
+		//static wchar_t const* toString() {
+		toString& operator.() {
 			MessageBoxW(0,success,L"xxxxxx",MB_OK);
 			return L"success fully";
 		}

@@ -42,7 +42,7 @@ std::function<
 int main(void)
 #endif
 {
-	onError<ErrorCode::success>::toString();
+	onError<ErrorCode::success>.toString();
 	
 	#ifdef TARGET_DLL 
 	return true;

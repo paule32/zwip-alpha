@@ -24,8 +24,8 @@
 # include <memory.h>
 
 // common std c++ header's:
-# include <cwchar>            // utf-16
-
+# include <cwchar>            // utf-16: default for windows 10 pro
+# include <typeinfo>          // run-time-type-informations: typeid(<class>)
 # include <iostream>
 # include <string>
 # include <fstream>

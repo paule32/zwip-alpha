@@ -73,6 +73,17 @@ namespace kallup::Exception
 	template <auto Type>
 	struct onError {
 		static wchar_t const* toString() {
+			switch typeid(Type) {
+				case typeid(int):
+					// todo: int
+				break;
+				case typeid(ErrorCode):
+					// todo: ErrorCode
+				break;
+				default:
+					// todo: ErrorCode
+				break;
+			}
 			return L"unknown";
 		}
 		onError(const wchar_t* text, const wchar_t* title) {

@@ -73,7 +73,7 @@ namespace kallup::Exception
 	template <auto Type>
 	struct onError {
 		static wchar_t const* toString() {
-			switch typeid(Type) {
+			switch (typeid(Type)) {
 				case typeid(int):
 					// todo: int
 				break;

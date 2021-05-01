@@ -40,6 +40,9 @@
 # include <exception>
 # include <regex>
 
+// win32api #undef functions (todo: own header):
+# undef MessageBox
+
 // common framework header's:
 namespace kallup                        { };
 

@@ -20,14 +20,14 @@ namespace kallup::GUI::Windows::Classic
 	// Button's supported at MessageBox:
 	// ---------------------------------------
 	enum class Button {
-		AbortRetryIgnore	= 0x0002L,
-		CancelRetryContinue = 0x0006L,
-		Help                = 0x4000L,
-		Ok                  = 0x0000L,
-		OkCancel            = 0x0001L,
-		RetryCancel         = 0x0005L,
-		YesNo               = 0x0004L,
-		YesNoCancel         = 0x0003L
+		AbortRetryIgnore	= 0x00000002L,
+		CancelRetryContinue = 0x00000006L,
+		Help                = 0x00004000L,
+		Ok                  = 0x00000000L,
+		OkCancel            = 0x00000001L,
+		RetryCancel         = 0x00000005L,
+		YesNo               = 0x00000004L,
+		YesNoCancel         = 0x00000003L
 	};
 	
 	// ---------------------------------------

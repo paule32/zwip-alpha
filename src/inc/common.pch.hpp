@@ -41,6 +41,16 @@
 # include <regex>
 
 // common framework header's:
+namespace kallup                        { };
+
+namespace kallup::TUI                   { };
+namespace kallup::TUI::DOS              { };
+namespace kallup::TUI::DOS::TurboVision { };
+
+namespace kallup::GUI                   { };
+namespace kallup::GUI::Windows          { };
+namespace kallup::GUI::Windows::Classic { };
+
 # include "kallup_string.hpp"
 # include "kallup_locales.hpp"
 # include "kallup_exception.hpp"

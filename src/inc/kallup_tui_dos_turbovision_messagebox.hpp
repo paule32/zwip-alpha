@@ -14,5 +14,6 @@
 
 namespace kallup::TUI::DOS::TurboVision
 {
+	extern int _test;
 };      // namespace: kallup::tui::dos::turbovision
 #endif  // __KALLUP_TUI_DOS_TURBOVISION_MESSAGEBOX_H__

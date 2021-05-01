@@ -110,7 +110,7 @@ namespace kallup::GUI::Windows::Classic
 			}	else
 			if (std::is_same(char*, m_Text) && std::is_same(char* m_Title)) {
 				#ifdef WINDOWS
-				return ::MessageBoxA(0,m_Text,mTitle,reinterpret_cast<UINT>(code));
+				return ::MessageBoxA(0,m_Text,m_Title,reinterpret_cast<UINT>(code));
 				#else
 					// todo
 				#endif

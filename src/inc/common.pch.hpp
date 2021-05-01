@@ -8,13 +8,14 @@
 #define __COMMON_H__
 
 // ms-windows header's:
+#ifdef WINDOWS
 # include <windows.h>
 # include <windowsx.h>
 # include <commctrl.h>
 # include <tchar.h>
 
 # include "resource.hpp"
-//-----
+#endif
 
 
 // common header's:
@@ -40,7 +41,9 @@
 # include <regex>
 
 // common framework header's:
-# include "string.hpp"
-# include "error.hpp"
+# include "kallup_string.hpp"
+# include "kallup_locales.hpp"
+# include "kallup_exception.hpp"
+# include "kallup_gui_windows_classic_messagebox.hpp"
 
 #endif

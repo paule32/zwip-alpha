@@ -1,5 +1,5 @@
 // ------------------------------------------------------
-// File    : src/cross/Exception.hpp
+// File    : src/cross/kalup_exception.hpp
 //
 // Autor   : Jens Kallup <kallup.jens@web.de> - paule32
 // License : (c) kallup.net - non-profit - 2021
@@ -10,11 +10,12 @@
 // ---------------------------------------
 // pre-compiled header files:
 // ---------------------------------------
-//# include "windows.pch.hpp" 	// windows: 10 pro
 # include "common.pch.hpp"		// common
 
 using namespace std;
 using namespace kallup::String;
+using namespace kallup::TUI::DOS::TurboVision;
+using namespace kallup::GUI::Windows::Classic;
 
 // ---------------------------------------
 // kallup::Exception ns:
@@ -70,18 +71,16 @@ namespace kallup::Exception
 	template <auto Type>
 	struct onError {
 		onError(void) {
-			// todo
 			if (std::is_same_v<decltype(Type), decltype(m_ErrorCode)>) {
-				MessageBoxW(0, L"infoooor", L"iiiir",MB_OK);
+				MessageBox<L"infoooor", L"iiiir">();
 			}
-			MessageBoxW(0, L"Unknown Error", L"Error",MB_OK);
+			MessageBox<L"Unknown Error", L"Error">();
 		};
 		onError(const wchar_t* text, const wchar_t* title) {
-			// todo
 			if (std::is_same_v<decltype(Type), decltype(m_ErrorCode)>) {
-				MessageBoxW(0, L" aaa  infoooor", L"iiiir",MB_OK);
+				MessageBox(L" aaa  infoooor", L"iiiir");
 			}
-			MessageBoxW(0, text, title,MB_OK);
+			MessageBox(text, title>();
 		};
 	};
 	/*

@@ -1,0 +1,121 @@
+// --------------------------------------------------------------
+// File    : src/cross/kallup_gui_windows_classic_messagebox-hpp
+//
+// Autor   : Jens Kallup <kallup.jens@web.de> - paule32
+// License : (c) kallup.net - non-profit - 2021
+// --------------------------------------------------------------
+#ifndef __KALLUP_GUI_WINDOWS_CLASSIC_MESSAGEBOX_H__
+#define __KALLUP_GUI_WINDOWS_CLASSIC_MESSAGEBOX_H__
+
+// ---------------------------------------
+// pre-compiled header files:
+// ---------------------------------------
+# include "common.pch.hpp"		// common
+
+usign namespace kallup::Locales;
+
+namespace kallup::GUI::Windows::Classic
+{
+	// ---------------------------------------
+	// Button's supported at MessageBox:
+	// ---------------------------------------
+	enum class Button {
+		AbortRetryIgnore	= 0x0002L,
+		CancelRetryContinue = 0x0006L,
+		Help                = 0x4000L,
+		Ok                  = 0x0000L,
+		OkCancel            = 0x0001L,
+		RetryCancel         = 0x0005L,
+		YesNo               = 0x0004L,
+		YesNoCancel         = 0x0003L
+	};
+	
+	// ---------------------------------------
+	// Icon's supported for MessageBox:
+	// ---------------------------------------
+	enum class Icon {
+		Exclamation         = 0x00000030L,
+		Warning             = 0x00000030L,
+		Information         = 0x00000040L,
+		Asterisk            = 0x00000040L,
+		Question            = 0x00000020L,
+		Stop                = 0x00000010L,
+		Error               = 0x00000010L,
+		Hand                = 0x00000010L
+	};
+	
+	// ---------------------------------------
+	// default Button:
+	// ---------------------------------------
+	enum class Default {
+		Button1             = 0x00000000L,
+		Button2             = 0x00000100L,
+		Button3             = 0x00000200L,
+		Button4             = 0x00000300L
+	};
+	
+	// ---------------------------------------
+	// position of MessageBox + text:
+	// ---------------------------------------
+	enum class Position {
+		DesktopOnly         = 0x00020000L,
+		Right               = 0x00080000L,  // right justified
+		RightToLeft         = 0x00100000L,  // for Arabic systems
+		Foreground          = 0x00010000L,
+		TopMost             = 0x00040000L
+	};
+	
+	// ---------------------------------------
+	// return value result from button click:
+	// ---------------------------------------
+	enum class Result {
+		Abort               =  3,
+		Cancel              =  2,
+		Continue            = 11,
+		Ignore              =  5,
+		No                  =  7,
+		Ok                  =  1,
+		Retry               =  4,
+		TryAgain            = 10,
+		Yes                 =  6
+	};
+	
+	// ---------------------------------------
+	// MessageBox< Text, Title>:
+	// ---------------------------------------
+	template < typename Text, typename Title >
+	class MessageBox
+	{
+		Text  m_Text;
+		Title m_Title;
+	public:
+		MessageBox(void)
+		: m_Text (L"unknow message")
+		, m_Title(L"Warning")
+		{ /* empty */ }
+		
+		MessageBox(Text text, Title title)
+		: m_Text(text)
+		, m_Title(title)
+		{ /* empty */ }
+
+		int operator ()(Icon code)   { return ()(Button::Ok); }
+		int operator ()(Button code) {
+			if (std::is_same(wchar_t*, m_Text) && std::(wchar_t* m_Title)) {
+				#ifdef WINDOWS
+				return ::MessageBoxW(0,m_Text,m_Title,reinterpret_cast<UINT>(code));
+				#else
+					// todo
+				#endif
+			}	else
+			if (std::is_same(char*, m_Text) && std::is_same(char* m_Title)) {
+				#ifdef WINDOWS
+				return ::MessageBoxA(0,m_Text,mTitle,reinterpret_cast<UINT>(code));
+				#else
+					// todo
+				#endif
+			}
+		};
+	};
+};      // namespace: kallup::gui::classic
+#endif  // __KALLUP_GUI_WINDOWS_CLASSIC_MESSAGEBOX_H__

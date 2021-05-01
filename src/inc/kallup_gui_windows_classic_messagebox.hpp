@@ -14,6 +14,8 @@
 
 usign namespace kallup::Locales;
 
+namespace kallup::GUI          { };
+namespace kallup::GUI::Windows { };
 namespace kallup::GUI::Windows::Classic
 {
 	// ---------------------------------------

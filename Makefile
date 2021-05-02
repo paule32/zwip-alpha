@@ -48,7 +48,7 @@ GDB_FLAG  = -ggdb
 CXX       = g++
 CXX_LIBS  = -lstdc++ -lm
 CXX_FLAGS = \
-	${CFLAGS} -std=c++2a -c -D_GLIBCXX_USE_CXX11_ABI=0 \
+	${CFLAGS} -std=gnuc++2a -c -D_GLIBCXX_USE_CXX11_ABI=0 \
 	${INCLUDES_PATH} -fPIC \
 	-Wno-write-strings \
 	-Wno-deprecated-declarations

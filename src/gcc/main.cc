@@ -42,11 +42,13 @@ std::function<
 int main(void)
 #endif
 {
-	ErrorCode code  = ErrorCode::success;
-	wchar_t*  text  = L"Hallo Welt!";
-	wchar_t*  title = L"Error";
+	ErrorCode     code  = ErrorCode::success;
+	String<Utf16> text  = L"Hallo Welt!";
+	String<Utf16> title = L"Error";
 	//
-	onError<ErrorCode,wchar_t*,wchar_t*>(code,text,title);
+	onError<ErrorCode,
+			String<Utf16>,
+			String<Utf16>>(code,text,title);
 	
 	#ifdef TARGET_DLL 
 	return true;

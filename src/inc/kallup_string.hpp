@@ -14,20 +14,16 @@
 // ---------------------------------------
 namespace kallup::String
 {
-	class ansi  { };
-	class utf8  { };
-	class utf16 { };
-	class utf32 { };
+	class Ansi  { };
+	class Utf8  { };
+	class Utf16 { };
+	class Utf32 { };
 	
-	class String { public: String() { } };
-	/*
-	template <class CharType>
-	class String
-	{
+	template <class T>
+	class String {
+		T charType;
 	public:
-		String(CharType Type)
-		{
-		}
-	};*/  //
+		String() { }
+	};  // class:     String<>
 };	    // namespace: kallup::string
 #endif	// header:    String.hpp

@@ -83,6 +83,9 @@ namespace kallup::Exception
 				}
 			};
 		};
+		
+		onError& operator = (ErrorCode code) {
+		};
 	};
 
 /*

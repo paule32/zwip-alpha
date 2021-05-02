@@ -33,7 +33,7 @@ namespace kallup
 		Desktop = 2
 	};
 	
-	#ifndef LIB_IMPL
+	#ifdef LIB_IMPL
 	extern AppMode ApplicationSystem;
 	#else
 		#ifdef WINDOWS

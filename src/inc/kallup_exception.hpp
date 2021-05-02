@@ -70,13 +70,13 @@ namespace kallup::Exception
 	struct text_t { };
 	
 	constexpr code_t code(ErrorCode _code) {
-		return NULL;
+		return 0;
 	};
 	constexpr text_t text(wchar_t* _text) {
-		return NULL;
+		return 0;
 	};
 	constexpr text_t title(wchar_t* _title) {
-		return NULL;
+		return 0;
 	};
 	
 	template <typename T1, typename T2, typename T3>

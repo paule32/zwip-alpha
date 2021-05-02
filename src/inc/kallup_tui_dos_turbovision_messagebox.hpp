@@ -80,17 +80,22 @@ namespace kallup::TUI::DOS::TurboVision
 		Yes                 =  6
 	};
 
-	template < typename Text, typename Title >
+	// ---------------------------------------
+	// MessageBox< Text, Title, Button >:
+	// ---------------------------------------
+	template < typename Text, typename Title, typename Btn >
 	class MessageBox
 	{
-		Text  m_text;
-		Title m_title;
+		Text   m_text;
+		Title  m_title;
+		Button m_Button;
 	public:
 		MessageBox(void) {}
-		MessageBox(Text text, Title title)
-		: m_text (text )
-		, m_title(title)
-		{ };
+		MessageBox(Text text, Title title, Btn button)
+		: m_text  (text  )
+		, m_title (title )
+		, m_Button(button)
+		{ /* empty */ };
 		
 		int operator ()(Button btn) {
 			return 2;

@@ -83,22 +83,25 @@ namespace kallup::GUI::Windows::Classic
 	};
 	
 	// ---------------------------------------
-	// MessageBox< Text, Title>:
+	// MessageBox< Text, Title, Button >:
 	// ---------------------------------------
-	template < typename Text, typename Title >
+	template < typename Text, typename Title, typename Btn >
 	class MessageBox
 	{
-		Text  m_Text;
-		Title m_Title;
+		Text   m_Text;
+		Title  m_Title;
+		Button m_Button;
 	public:
 		MessageBox(void)
-		: m_Text (L"unknow message")
-		, m_Title(L"Warning")
+		: m_Text  (L"unknow message")
+		, m_Title (L"Warning")
+		, m_Button(Button::Ok)
 		{ /* empty */ }
 		
-		MessageBox(Text text, Title title)
-		: m_Text(text)
-		, m_Title(title)
+		MessageBox(Text text, Title title, Btn button)
+		: m_Text  (text  )
+		, m_Title (title )
+		, m_Button(button)
 		{ /* empty */ }
 
 		int operator ()(Icon code)   { return msgBox(Button::Ok); };

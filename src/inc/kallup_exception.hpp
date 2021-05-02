@@ -72,12 +72,20 @@ namespace kallup::Exception
 		onError(T1 t1, T2 t2, T3 t3) {
 			if (std::is_same<ErrorCode, T1>::value) {
 				if (kallup::ApplicationSystem == kallup::AppSystem::Dos) {
-					kallup::TUI::DOS::TurboVision::MessageBox<String<Utf16>,String<Utf16>,
-					kallup::TUI::DOS::TurboVision::Button>(t1,t2,t3);
+					kallup::TUI::DOS::TurboVision::MessageBox<
+					kallup::String::String<
+					kallup::String::Utf16>,
+					kallup::String::String<
+					kallup::String::Utf16>,
+					kallup::TUI::DOS::TurboVision::Button>(t1, t2, t3);
 				}	else
 				if (kallup::ApplicationSystem == kallup::AppSystem::Windows) {
-					kallup::GUI::Windows::Classic::MessageBox<String<Utf16>,String<Utf16>,
-					kallup::GUI::Windows::Classic::Button>(t1,t2,t3);
+					kallup::GUI::Windows::Classic::MessageBox<
+					kallup::String::String<
+					kallup::String::Utf16>,
+					kallup::String::String<
+					kallup::String::Utf16>,
+					kallup::GUI::Windows::Classic::Button>(t1, t2, t3);
 				}
 			};
 		};

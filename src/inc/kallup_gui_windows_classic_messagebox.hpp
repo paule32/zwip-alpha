@@ -103,6 +103,12 @@ namespace kallup::GUI::Windows::Classic
 		, m_Title (title )
 		, m_Button(button)
 		{ /* empty */ }
+		
+		MessageBox(Text& text, Title& title, Btn& button)
+		: m_Text  (text  )
+		, m_Title (title )
+		, m_Button(button)
+		{ /* empty */ }
 
 		int operator ()(Icon code)   { return msgBox(Button::Ok); };
 		int operator ()(Button code) { return msgBox(code);       };

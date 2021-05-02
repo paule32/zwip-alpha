@@ -72,7 +72,7 @@ namespace kallup::Exception
 	constexpr wchar_t* text(wchar_t* _text) {
 		return _text;
 	};
-	constexpr wchar_t* title(wchar_r* _title) {
+	constexpr wchar_t* title(wchar_t* _title) {
 		return _title;
 	};
 	

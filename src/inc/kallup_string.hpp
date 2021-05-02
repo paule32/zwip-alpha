@@ -19,7 +19,7 @@ namespace kallup::String
 	class Utf16 { };
 	class Utf32 { };
 	
-	template <auto TC>
+	template <class TC = Utf16>
 	class String {
 	public:
 	

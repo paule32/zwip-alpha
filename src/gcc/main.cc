@@ -6,6 +6,8 @@
 // -----------------------------------------------------
 
 # include "common.pch.hpp"
+
+using namespace kallup::String;
 using namespace kallup::Exception;
 
 // lambda [capture locals](arguments to lambda)

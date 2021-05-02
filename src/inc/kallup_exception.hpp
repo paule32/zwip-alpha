@@ -66,14 +66,17 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	constexpr ErrorCode code(ErrorCode _code) {
-		return _code;
+	struct code_t { };
+	struct text_t { };
+	
+	constexpr code_t code(ErrorCode _code) {
+		return NULL;
 	};
-	constexpr wchar_t* text(wchar_t* _text) {
-		return _text;
+	constexpr text_t text(wchar_t* _text) {
+		return NULL;
 	};
-	constexpr wchar_t* title(wchar_t* _title) {
-		return _title;
+	constexpr text_t title(wchar_t* _title) {
+		return NULL;
 	};
 	
 	template <typename T1, typename T2, typename T3>

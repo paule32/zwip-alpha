@@ -100,12 +100,6 @@ namespace kallup::GUI::Windows::Classic
 		, m_Button(Button::Ok)
 		{ /* empty */ }
 		
-		MessageBox(Text text, Title title, Btn button)
-		: m_Text  (text  )
-		, m_Title (title )
-		, m_Button(button)
-		{ /* empty */ }
-		
 		MessageBox(Text& text, Title& title, Btn& button)
 		: m_Text  (text  )
 		, m_Title (title )

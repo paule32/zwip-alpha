@@ -86,12 +86,13 @@ namespace kallup::GUI::Windows::Classic
 	// MessageBox< Text, Title, Button >:
 	// ---------------------------------------
 	template <
-		template < typename kallup::String::Utf16 Ua> typename Text ,
-		template < typename kallup::String::Utf16 Ub> typename Title, typename Btn >
+		template < typename kallup::String::Utf16> typename Text ,
+		template < typename kallup::String::Utf16> typename Title, typename Btn >
 	class MessageBox
 	{
-		Text  <Ta> m_Text;
-		Title <Tb> m_Title;
+		Text  <kallup::String::Utf16> m_Text;
+		Title <kallup::String::Utf16> m_Title;
+		//
 		Button     m_Button;
 	public:
 		MessageBox(void)

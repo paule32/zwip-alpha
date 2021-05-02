@@ -42,7 +42,11 @@ std::function<
 int main(void)
 #endif
 {
-	onError<code(ErrorCode::success),text(L"dies ist ein Test"),title(L"Hallo")>();
+	ErrorCode code  = ErrorCode::success;
+	wchar_t*  text  = L"Hallo Welt!";
+	wchar_t*  title = L"Error";
+	//
+	onError<code,text,title>();
 	
 	#ifdef TARGET_DLL 
 	return true;

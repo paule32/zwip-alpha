@@ -69,19 +69,19 @@ namespace kallup::Exception
 	struct code {
 		code() {
 		};
-		code(int _code) {
+		void operator ()(int _code) {
 		};
 	};
 	struct text {
 		text() {
 		};
-		text(wchar_t* _text) {
+		void operator()(wchar_t* _text) {
 		};
 	};
 	struct title {
 		title() {
 		};
-		title(wchar_t* _title) {
+		void operator()(wchar_t* _title) {
 		};
 	};
 	

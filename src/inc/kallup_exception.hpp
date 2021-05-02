@@ -81,7 +81,7 @@ namespace kallup::Exception
 	# define text (s) decltype(text_impl<[] -> constexpr(std::size_t i) { return s{i]; }>(std::make_index_sequence<sizeof(s)>()))
 	# define title(s) decltype(text_impl<[] -> constexpr(std::size_t i) { return s{i]; }>(std::make_index_sequence<sizeof(s)>()))
  
-	template <ErrorCode TCode>
+	template <typename TCode>
 	struct onError {
 		onError(void) {
 			if (std::is_same<ErrorCode, TCode>::value) {

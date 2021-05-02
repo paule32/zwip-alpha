@@ -114,7 +114,12 @@ namespace kallup::GUI::Windows::Classic
 		
 	private:
 		int msgBox(Button code) {
-			if (std::is_same<wchar_t*, Text>::value && std::is_same<wchar_t*, Title>::value) {
+			if (std::is_same<
+				class kallup::String::String<
+				class kallup::String::Utf16 >, Text>::value
+			&&  std::is_same<
+				class kallup::String::String<
+				class kallup::String::Utf16 >, Title>::value) {
 				#ifdef WINDOWS
 				//return ::MessageBoxW(0, m_Text, m_Title, reinterpret_cast<UINT>(code));
 				#else

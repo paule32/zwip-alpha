@@ -66,21 +66,13 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	template <typename TCode>
 	struct code {
 	};
-
-	template <char ...Chars>
-	struct text_t {
-		static constexpr const char data[sizeof...(Chars)] = {Chars...};
+	struct text {
 	};
-	template <char s(std::size_t), std::size_t ...I> auto text_impl(std::index_sequence<I...>) { return text_t<s(I)...>(); }
-
-	# undef  text
-	# undef  title
-	# define text (s) decltype(text_impl<[] -> constexpr(std::size_t i) { return s{i]; }>(std::make_index_sequence<sizeof(s)>()))
-	# define title(s) decltype(text_impl<[] -> constexpr(std::size_t i) { return s{i]; }>(std::make_index_sequence<sizeof(s)>()))
- 
+	struct title {
+	};
+	
 	template <typename TCode>
 	struct onError {
 		onError(void) {
@@ -96,7 +88,7 @@ namespace kallup::Exception
 	};
 
 	template <>
-	struct onError<ErrorCode> {
+	struct onError<code> {
 	};
 
 /*

@@ -67,10 +67,16 @@ namespace kallup::Exception
 	// system error codes, and the message:
 	// ---------------------------------------
 	struct code {
+		code(int _code) {
+		};
 	};
 	struct text {
+		text(wchar_t* _text) {
+		};
 	};
 	struct title {
+		title(wchar_t* _title) {
+		};
 	};
 	
 	template <typename TCode>

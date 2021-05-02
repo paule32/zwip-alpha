@@ -66,13 +66,9 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	struct code {
-		code() {
-		};
-		code(int _code) {
-		};
-		void operator ()(int _code) {
-		};
+	template <typename T>
+	constexpr unsigned int code(ErrorCode _code) {
+		return _code;
 	};
 	struct text {
 		text() {

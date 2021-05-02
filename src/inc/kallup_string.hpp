@@ -19,16 +19,16 @@ namespace kallup::String
 	class Utf16 { };
 	class Utf32 { };
 	
-	template <>
-	class String<Utf16 TC> {
+	template <typename TC>
+	class String {
 		TC charType;
 	public:
 		String()
 		{
 		};
 		
-		String<Utf16>& operator = (wchar_t* text) {
-		};
+		//String<Utf16>& operator = (wchar_t* text) {
+		//};
 	};  // class:     String<>
 };	    // namespace: kallup::string
 #endif	// header:    String.hpp

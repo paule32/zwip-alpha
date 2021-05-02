@@ -66,7 +66,6 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	template <typename T>
 	constexpr ErrorCode code(ErrorCode _code) {
 		return _code;
 	};

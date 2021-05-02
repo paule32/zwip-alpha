@@ -34,7 +34,7 @@ namespace kallup
 	};
 	
 	#ifdef LIB_IMPL
-	extern AppMode ApplicationSystem;
+	extern AppSystem ApplicationSystem;
 	#else
 		#ifdef WINDOWS
 		AppSystem ApplicationSystem = AppSystem::Unknown;

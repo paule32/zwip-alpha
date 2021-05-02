@@ -90,9 +90,9 @@ namespace kallup::GUI::Windows::Classic
 		template < typename Tb > typename Title, typename Btn >
 	class MessageBox
 	{
-		Text   m_Text;
-		Title  m_Title;
-		Button m_Button;
+		Text  <Ta> m_Text;
+		Title <Tb> m_Title;
+		Button     m_Button;
 	public:
 		MessageBox(void)
 		: m_Text  (L"unknow message")

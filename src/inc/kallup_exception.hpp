@@ -101,10 +101,6 @@ namespace kallup::Exception
 		};
 	};
 
-	template <>
-	struct onError<code> {
-	};
-
 /*
 	template <template <typename> class TCode, class Y>
 	struct onError<T1<Y>> {

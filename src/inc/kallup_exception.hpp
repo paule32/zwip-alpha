@@ -76,10 +76,10 @@ namespace kallup::Exception
 		return _title;
 	};
 	
-	template <typename TCode>
+	template <typename T1, typename T2, typename T3>
 	struct onError {
 		onError(void) {
-			if (std::is_same<ErrorCode, TCode>::value) {
+			if (std::is_same<ErrorCode, T1>::value) {
 				if (kallup::ApplicationSystem == kallup::AppSystem::Dos) {
 					//kallup::TUI::DOS::TurboVision::MessageBox<L"Unknown", L"Error">(kallup::TUI::DOS::TurboVision::Button::Ok);
 				}	else

@@ -86,12 +86,12 @@ namespace kallup::GUI::Windows::Classic
 	// MessageBox< Text, Title, Button >:
 	// ---------------------------------------
 	template <
-		template < kallup::String::String< kallup::String::Utf16 > > typename Text ,
-		template < kallup::String::String< kallup::String::Utf16 > > typename Title, typename Btn >
+		template < class kallup::String::String< class kallup::String::Utf16 > > typename Text ,
+		template < class kallup::String::String< class kallup::String::Utf16 > > typename Title, typename Btn >
 	class MessageBox
 	{
-		kallup::String::String< kallup::String::Utf16 > m_Text;
-		kallup::String::String< kallup::String::Utf16 > m_Title;
+		class kallup::String::String< class kallup::String::Utf16 > m_Text;
+		class kallup::String::String< class kallup::String::Utf16 > m_Title;
 		//
 		Button     m_Button;
 	public:
@@ -102,8 +102,8 @@ namespace kallup::GUI::Windows::Classic
 		{ /* empty */ }
 		
 		MessageBox(
-			kallup::String::String< kallup::String::Utf16 > text,
-			kallup::String::String< kallup::String::Utf16 > title, Button button)
+			class kallup::String::String< class kallup::String::Utf16 > text,
+			class kallup::String::String< class kallup::String::Utf16 > title, Button button)
 		: m_Text  (text  )
 		, m_Title (title )
 		, m_Button(button)
@@ -116,14 +116,14 @@ namespace kallup::GUI::Windows::Classic
 		int msgBox(Button code) {
 			if (std::is_same<wchar_t*, Text>::value && std::is_same<wchar_t*, Title>::value) {
 				#ifdef WINDOWS
-				return ::MessageBoxW(0, m_Text, m_Title, reinterpret_cast<UINT>(code));
+				//return ::MessageBoxW(0, m_Text, m_Title, reinterpret_cast<UINT>(code));
 				#else
 					// todo
 				#endif
 			}	else
 			if (std::is_same<char*, Text>::value && std::is_same<char*, Title>::value) {
 				#ifdef WINDOWS
-				return ::MessageBoxA(0, m_Text, m_Title, reinterpret_cast<UINT>(code));
+				//return ::MessageBoxA(0, m_Text, m_Title, reinterpret_cast<UINT>(code));
 				#else
 					// todo
 				#endif

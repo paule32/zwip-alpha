@@ -23,7 +23,12 @@ namespace kallup::String
 	class String {
 		T charType;
 	public:
-		String() { }
+		String()
+		{
+		};
+		
+		String<Utf16>& operator = (wchar_t* text) {
+		};
 	};  // class:     String<>
 };	    // namespace: kallup::string
 #endif	// header:    String.hpp

@@ -86,8 +86,8 @@ namespace kallup::GUI::Windows::Classic
 	// MessageBox< Text, Title, Button >:
 	// ---------------------------------------
 	template <
-		template< typename Ta >, typename Text &,
-		template< typename Tb >, typename Title&, typename Btn& >
+		typename template< typename Ta >, typename Text &,
+		typename template< typename Tb >, typename Title&, typename Btn& >
 	class MessageBox
 	{
 		Text   m_Text;

@@ -42,7 +42,7 @@ std::function<
 int main(void)
 #endif
 {
-	onError<ErrorCode::success>(L"dies ist ein Test", L"Hallo");
+	onError<code()>(L"dies ist ein Test", L"Hallo");
 	
 	#ifdef TARGET_DLL 
 	return true;

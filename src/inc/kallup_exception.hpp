@@ -96,7 +96,7 @@ namespace kallup::Exception
 	};
 
 	template <>
-	struct onError<ErrorCode TCode> {
+	struct onError<ErrorCode> {
 	};
 
 /*

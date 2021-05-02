@@ -69,21 +69,11 @@ namespace kallup::Exception
 	constexpr ErrorCode code(ErrorCode _code) {
 		return _code;
 	};
-	struct text {
-		text() {
-		};
-		text(wchar_t* _text) {
-		};
-		void operator()(wchar_t* _text) {
-		};
+	constexpr wchar_t* text(wchar_t* _text) {
+		return _text;
 	};
-	struct title {
-		title() {
-		};
-		title(wchar_t* _title) {
-		}
-		void operator()(wchar_t* _title) {
-		};
+	constexpr wchar_t* title(wchar_r* _title) {
+		return _title;
 	};
 	
 	template <typename TCode>

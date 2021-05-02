@@ -12,7 +12,7 @@
 // ---------------------------------------
 # include "common.pch.hpp"		// common
 
-usign namespace kallup::Locales;
+using namespace kallup::Locales;
 
 namespace kallup::GUI          { };
 namespace kallup::GUI::Windows { };
@@ -101,18 +101,21 @@ namespace kallup::GUI::Windows::Classic
 		, m_Title(title)
 		{ /* empty */ }
 
-		int operator ()(Icon code)   { return ()(Button::Ok); }
-		int operator ()(Button code) {
-			if (std::is_same(wchar_t*, m_Text) && std::(wchar_t* m_Title)) {
+		int operator ()(Icon code)   { return msgBox(Button::Ok); };
+		int operator ()(Button code) { return msgBox(code);       };
+		
+	private:
+		int msgBox(Button code) {
+			if (std::is_same<wchar_t*, Text>::value && std::is_same<wchar_t*, Title>::value) {
 				#ifdef WINDOWS
-				return ::MessageBoxW(0,m_Text,m_Title,reinterpret_cast<UINT>(code));
+				return ::MessageBoxW(0, m_Text, m_Title, reinterpret_cast<UINT>(code));
 				#else
 					// todo
 				#endif
 			}	else
-			if (std::is_same(char*, m_Text) && std::is_same(char* m_Title)) {
+			if (std::is_same<char*, Text>::value && std::is_same<char*, Title>::value) {
 				#ifdef WINDOWS
-				return ::MessageBoxA(0,m_Text,m_Title,reinterpret_cast<UINT>(code));
+				return ::MessageBoxA(0, m_Text, m_Title, reinterpret_cast<UINT>(code));
 				#else
 					// todo
 				#endif

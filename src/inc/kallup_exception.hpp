@@ -12,11 +12,6 @@
 // ---------------------------------------
 # include "common.pch.hpp"		// common
 
-using namespace std;
-using namespace kallup::String;
-using namespace kallup::TUI::DOS::TurboVision;
-using namespace kallup::GUI::Windows::Classic;
-
 // ---------------------------------------
 // kallup::Exception ns:
 // ---------------------------------------
@@ -24,6 +19,7 @@ namespace kallup::Exception
 {
 	// some short mapper:
 	typedef wchar_t* ErrorText;
+	typedef wchar_t* ErrorTitle;
   
 	// ---------------------------------------
 	// win32api C++ "const" code definition's:
@@ -52,37 +48,72 @@ namespace kallup::Exception
 	// -D LIB_IMPLEMENTATION : only at impl. time !
 	// ---------------------------------------------
 	#ifdef LIB_IMPL
-		extern ErrorCode m_ErrorCode;  // number of code
-		extern ErrorText m_ErrorText;  // text for exception
+		extern ErrorCode  m_ErrorCode;  // number of code
+		extern ErrorText  m_ErrorText;  // text for exception
+		extern ErrorTitle m_ErrorTitle; // title for message box
 	#else
-		ErrorCode m_ErrorCode = ErrorCode::success;
-		ErrorText m_ErrorText = L"";
+		ErrorCode  m_ErrorCode  = ErrorCode::success;
+		ErrorTitle m_ErrorTitle = L"Error";
+		ErrorText  m_ErrorText  = L"Unknown";
 	#endif
 
 	class Exception: public std::exception {
 	public:
-		virtual const ErrorText toString() const throw () { return m_ErrorText; }
-		virtual const ErrorCode toCode  () const throw () { return m_ErrorCode; }
+		virtual const ErrorText  toString() const throw () { return m_ErrorText; }
+		virtual const ErrorCode  toCode  () const throw () { return m_ErrorCode; }
 	};
-		
+
 	// ---------------------------------------
 	// system error codes, and the message:
 	// ---------------------------------------
-	template <auto Type>
+	template <typename TCode>
+	struct code {
+	};
+
+	template <char ...Chars>
+	struct text_t {
+		static constexpr const char data[sizeof...(Chars)] = {Chars...};
+	};
+	template <char s(std::size_t), std::size_t ...I> auto text_impl(std::index_sequence<I...>) { return text_t<s(I)...>(); }
+
+	# undef  text
+	# undef  title
+	# define text (s) decltype(text_impl<[] -> constexpr(std::size_t i) { return s{i]; }>(std::make_index_sequence<sizeof(s)>()))
+	# define title(s) decltype(text_impl<[] -> constexpr(std::size_t i) { return s{i]; }>(std::make_index_sequence<sizeof(s)>()))
+ 
+	template <ErrorCode TCode>
 	struct onError {
 		onError(void) {
-			if (std::is_same_v<decltype(Type), decltype(m_ErrorCode)>) {
-				MessageBox<L"infoooor", L"iiiir">();
-			}
-			MessageBox<L"Unknown Error", L"Error">();
-		};
-		onError(const wchar_t* text, const wchar_t* title) {
-			if (std::is_same_v<decltype(Type), decltype(m_ErrorCode)>) {
-				MessageBox(L" aaa  infoooor", L"iiiir");
-			}
-			MessageBox(text, title>();
+			if (std::is_same<ErrorCode, TCode>::value) {
+				if (kallup::ApplicationSystem == kallup::AppSystem::Dos) {
+					//kallup::TUI::DOS::TurboVision::MessageBox<L"Unknown", L"Error">(kallup::TUI::DOS::TurboVision::Button::Ok);
+				}	else
+				if (kallup::ApplicationSystem == kallup::AppSystem::Windows) {
+					//kallup::GUI::Windows::Classic::MessageBox<L"known", L"Error">(kallup::GUI::Windows::Classic::Button::Ok);
+				}
+			};
 		};
 	};
+	
+	template <>
+	struct onError<ErrorCode TCode> {
+	};
+
+/*
+	template <template <typename> class TCode, class Y>
+	struct onError<T1<Y>> {
+		onError() {
+			if (std::is_same<ErrorCode, T1>::value) {
+				if (kallup::ApplicationSystem == kallup::AppSystem::Dos) {
+					kallup::TUI::DOS::TurboVision::MessageBox<txt,L"Error">(kallup::TUI::DOS::TurboVision::Button::Ok);
+				}	else
+				if (kallup::ApplicationSystem == kallup::AppSystem::Windows) {
+					kallup::GUI::Windows::Classic::MessageBox<txt,L"Error">(kallup::GUI::Windows::Classic::Button::Ok);
+				}
+			};
+		};
+	};
+*/
 	/*
 	struct onError
 	{
@@ -120,22 +151,22 @@ namespace kallup::Exception
 	// ---------------------------------------
 	// system warning codes, and the message:
 	// ---------------------------------------
-	template< int16_t NC, std::function<void(std::string text, std::string title)> &EF>
+	template< int16_t NC, std::function<void(std::string _text, std::string _title)> &EF>
 	struct onWarn
 	{
-		void call(std::string text, std::string title) {
-			EF(text, title);
+		void call(std::string _text, std::string _title) {
+			EF(_text, _title);
 		}
 	};
 
 	// ---------------------------------------
 	// system info codes, and the message:
 	// ---------------------------------------
-	template< int16_t NC, std::function<void(std::string text, std::string title)> &EF>
+	template< int16_t NC, std::function<void(std::string _text, std::string _title)> &EF>
 	struct onInfo
 	{
-		void call(std::string text, std::string title) {
-			EF(text, title);
+		void call(std::string _text, std::string _title) {
+			EF(_text, _title);
 		}
 	};
 };	    // namespace: kallup::Exception

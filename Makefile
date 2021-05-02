@@ -114,6 +114,7 @@ LIBS = \
 	-l user32
 
 all: pre_tasks github pre_header main
+#all: pre_tasks  pre_header main
 
 main: ${OUT_DIR}/libzwip.exe
 
@@ -144,7 +145,7 @@ github:
 	git config --global user.name  "paule32"
 	git add src\*.*
 	git commit -a -m "update"
-	git push
+#	git push
 	mkdir -p ./build/.obj
 	mkdir -p ./build/.res
 

@@ -10,10 +10,10 @@ using namespace kallup::Exception;
 
 // lambda [capture locals](arguments to lambda)
 std::function<
-	void (std::wstring text,
-		  std::wstring title) > handleError = [](
-		  std::wstring text,
-		  std::wstring title)
+	void (std::wstring _text,
+		  std::wstring _title) > handleError = [](
+		  std::wstring _text,
+		  std::wstring _title)
 {
 //	wchar_t s1[100] = { &text.c_str() };
 //	MessageBoxW(0, s1, title.c_str(), MB_OK); 

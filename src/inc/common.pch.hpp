@@ -54,10 +54,13 @@ namespace kallup::GUI                   { };
 namespace kallup::GUI::Windows          { };
 namespace kallup::GUI::Windows::Classic { };
 
+# include "kallup.hpp"
 # include "kallup_string.hpp"
 # include "kallup_locales.hpp"
-# include "kallup_exception.hpp"
+
 # include "kallup_tui_dos_turbovision_messagebox.hpp"
 # include "kallup_gui_windows_classic_messagebox.hpp"
+
+# include "kallup_exception.hpp"
 
 #endif

@@ -46,7 +46,7 @@ int main(void)
 	wchar_t*  text  = L"Hallo Welt!";
 	wchar_t*  title = L"Error";
 	//
-	onError<code,text,title>();
+	onError<ErrorCode,wchar_t*,wchar_t*>(code,text,title);
 	
 	#ifdef TARGET_DLL 
 	return true;

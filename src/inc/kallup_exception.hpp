@@ -68,7 +68,8 @@ namespace kallup::Exception
 	// ---------------------------------------
 	template <typename T1, typename T2, typename T3>
 	struct onError {
-		onError(void) {
+		onError(void) { };
+		onError(T1 t1, T2 t2, T3 t3) {
 			if (std::is_same<ErrorCode, T1>::value) {
 				if (kallup::ApplicationSystem == kallup::AppSystem::Dos) {
 					//kallup::TUI::DOS::TurboVision::MessageBox<L"Unknown", L"Error">(kallup::TUI::DOS::TurboVision::Button::Ok);

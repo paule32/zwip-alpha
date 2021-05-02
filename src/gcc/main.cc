@@ -42,7 +42,7 @@ std::function<
 int main(void)
 #endif
 {
-	onError<kallup::Exception::code(ErrorCode::success),text(L"dies ist ein Test"),title(L"Hallo")>();
+	onError<code(ErrorCode::success),text(L"dies ist ein Test"),title(L"Hallo")>();
 	
 	#ifdef TARGET_DLL 
 	return true;
